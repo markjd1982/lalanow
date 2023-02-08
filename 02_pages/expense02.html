@@ -1,0 +1,809 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>지출결의서 내역<p>경비사용내역을 취합하여 회계부서에 지출결의서를 제출합니다.</p></h2>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <p class="label">상태</p>
+                                <div class="select-wrap" style="width:200px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                                <input type="checkbox" id="checkboxs1" name="checkboxs1" checked>
+                                <label class="ml20" for="checkboxs1">완료 제외</label>
+                            </div>
+                            <div class="item">
+                                <p class="label">검색</p>
+                                <div class="select-wrap mr10" style="width:150px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="검색어 입력" style="width: 300px">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap">
+                    <a href="#" class="file btn-modal"  data-target="excel-modal">엑셀  양식 다운로드</a>
+                    <a href="#" class="sec btn-modal" data-target="erp-modal">ERP 연동</a>
+                    <a href="#" class="sec btn-modal" data-target="erp2-modal">ERP 연동</a>
+                    <a href="#" class="sec btn-modal" data-target="print-modal">인쇄</a>
+                    <a href="#" class="pri btn-modal" data-target="apply-modal">지출결의서 작성</a>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+                    <col width="50px">
+                    <col width="155px">
+                    <col width="150px">
+                    <col width="150px">
+                    <col width="155px">
+                    <col width="150px">
+                    <col width="150px">
+                    <col width="120px">
+                </colgroup>
+                <tr class="table-group">
+                    <th>번호</th> 
+                    <th class="down item">부서</th>
+                    <th class="down item">작성자</th>
+                    <th class="down item">직급</th>
+                    <th class="down item">적용 월</th>
+                    <th class="down item">사용금액</th>
+                    <th class="down item">경비건수</th>
+                    <th class="down item">단계</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>대리</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>11</td>
+                    <td><a href="#" class="btn">결재대기</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>대리</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>11</td>
+                    <td><a href="#" class="btn">결재대기</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>대리</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>11</td>
+                    <td><a href="#" class="btn">결재대기</a></td>
+                </tr>
+            </table>
+            
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- 경비내역 등록 -->
+    <div id="modal-wrap" class="apply-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 등록</p>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <p class="label">부서명</p>
+                                <input type="text" style="width: 200px;" placeholder="검색어 입력">
+                                <input type="checkbox" id="checkboxs2" name="checkboxs2" checked>
+                                <label class="ml20" for="checkboxs2">완료 제외</label>
+                            </div>
+                            <div class="item">
+                                <p class="label">프로젝트</p>
+                                <div class="select-wrap" style="width: 200px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+            </div>
+
+			<table class="mt20">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="246px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox201" name="checkbox201">
+                        <label for="checkbox201"></label>
+                    </th>
+                    <th>사용일자</th>
+                    <th>결제유형</th>
+                    <th>사용처</th>
+                    <th>사용금액</th>
+                    <th>부서명</th>
+                    <th>사용자</th>
+                    <th>단계</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox202" name="checkbox202">
+                        <label for="checkbox202"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox203" name="checkbox203">
+                        <label for="checkbox203"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox204" name="checkbox204">
+                        <label for="checkbox204"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox205" name="checkbox205">
+                        <label for="checkbox205"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox206" name="checkbox206">
+                        <label for="checkbox206"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close btn-expand" data-target="idx5">저장</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- ERP 등록용 엑셀 다운로드 -->
+    <div id="modal-wrap" class="excel-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">ERP 등록용 엑셀 다운로드</p>
+            
+            <div class="top-search-wrap  single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">적용 월</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <input type="checkbox" id="checkboxs2" name="checkboxs2" checked>
+                            <label class="ml20" for="checkboxs2">ERP 연동 지출결의서 제외</label>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <h4>지출결의서 선택</h4>
+
+			<table class="mt10">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="140px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="286px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox301" name="checkbox301">
+                        <label for="checkbox301"></label>
+                    </th>
+                    <th>부서</th>
+                    <th>사용자</th>
+                    <th>직급</th>
+                    <th>적용월</th>
+                    <th>사용금액</th>
+                    <th>경비건수</th>
+                    <th>ERP 연동</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkbox302" name="checkbox302">
+                        <label for="checkbox302"></label>
+                    </td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>152,000</td>
+                    <td>파일 생성(2017-09-01)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkbox303" name="checkbox303">
+                        <label for="checkbox303"></label>
+                    </td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>152,000</td>
+                    <td>파일 생성(2017-09-01)</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkbox304" name="checkbox304">
+                        <label for="checkbox304"></label>
+                    </td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>152,000</td>
+                    <td>파일 생성(2017-09-01)</td>
+                </tr>
+            </table>
+            
+            <table class="mt20 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="*">
+                </colgroup>
+                <tr>
+                    <th>ERP 선택</th>
+                    <td class="flex">
+                        <div class="select-wrap">
+                            <select>
+                                <option>더존 ERP iU (자동전표체크리스트)</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close btn-expand" data-target="idx5">엑셀다운로드</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- ERP 연동 -->
+    <div id="modal-wrap" class="erp-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">ERP 연동</p>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">적용 월</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <p class="label ml20">검색</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>사용자</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width:150px;">
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <input type="checkbox" id="checkboxs01" name="checkboxs01">
+                                <label for="checkboxs01">미매입</label>
+                                <input type="checkbox" id="checkboxs02" name="checkboxs02">
+                                <label for="checkboxs02">연동대기</label>
+                                <input type="checkbox" id="checkboxs03" name="checkboxs03">
+                                <label for="checkboxs03">ERP 전송 중</label>
+                                <input type="checkbox" id="checkboxs04" name="checkboxs04">
+                                <label for="checkboxs04">ERP 등록완료</label>
+                                <input type="checkbox" id="checkboxs05" name="checkboxs05">
+                                <label for="checkboxs05">ERP 등록실패</label>
+                                <input type="checkbox" id="checkboxs06" name="checkboxs06">
+                                <label for="checkboxs06">그룹웨어 완료</label>
+                                <input type="checkbox" id="checkboxs07" name="checkboxs07">
+                                <label for="checkboxs07">그룹웨어 반려</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+
+			<table class="mt50">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="140px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="186px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox401" name="checkbox401">
+                        <label for="checkbox401"></label>
+                    </th>
+                    <th>부서</th>
+                    <th>사용자</th>
+                    <th>직급</th>
+                    <th>적용월</th>
+                    <th>사용금액</th>
+                    <th>경비건수</th>
+                    <th>ERP 전표번호</th>
+                    <th>연동결과</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkbox402" name="checkbox402">
+                        <label for="checkbox402"></label>
+                    </td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>152,000</td>
+                    <td>152,000</td>
+                    <td>파일 생성(2017-09-01)</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">ERP 전송</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- ERP 연동2 -->
+    <div id="modal-wrap" class="erp2-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">ERP 연동</p>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">적용 월</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <p class="label ml20">검색</p>
+                            <div class="select-wrap mr10" style="width:100px;">
+                                <select>
+                                    <option>사용자</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width:150px;">
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <input type="checkbox" id="checkboxs11" name="checkboxs11">
+                                <label for="checkboxs11">GW 상신중</label>
+                                <input type="checkbox" id="checkboxs12" name="checkboxs12">
+                                <label for="checkboxs12">GW 결재 중</label>
+                                <input type="checkbox" id="checkboxs13" name="checkboxs13">
+                                <label for="checkboxs03">GW 상신취소</label>
+                                <input type="checkbox" id="checkboxs14" name="checkboxs14">
+                                <label for="checkboxs14">GW/ERP 완료</label>
+                                <input type="checkbox" id="checkboxs15" name="checkboxs15">
+                                <label for="checkboxs15">GW 반려</label>
+                                <input type="checkbox" id="checkboxs16" name="checkboxs16">
+                                <label for="checkboxs16">ERP 역분개</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+
+			<table class="mt50">
+                <colgroup>
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="80px">
+                    <col width="140px">
+                    <col width="100px">
+                    <col width="80px">
+                    <col width="120px">
+                    <col width="90px">
+                    <col width="186px">
+                </colgroup>
+                <tr>
+                    <th>부서</th>
+                    <th>사용자</th>
+                    <th>직급</th>
+                    <th>적용월</th>
+                    <th>사용금액</th>
+                    <th>경비건수</th>
+                    <th>ERP 전표번호</th>
+                    <th>GW링크</th>
+                    <th>연동결과</th>
+                </tr>
+                <tr>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>1</td>
+                    <td>152000</td>
+                    <td><a href="#">확인</a></td>
+                    <td>GW 상신 중(2020-09-09)</td>
+                </tr>
+                <tr>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>1</td>
+                    <td>152000</td>
+                    <td><a href="#">확인</a></td>
+                    <td>GW 상신 중(2020-09-09)</td>
+                </tr>
+                <tr>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>1</td>
+                    <td>152000</td>
+                    <td><a href="#">확인</a></td>
+                    <td>GW 상신 중(2020-09-09)</td>
+                </tr>
+                <tr>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>1</td>
+                    <td>152000</td>
+                    <td><a href="#">확인</a></td>
+                    <td>GW 상신 중(2020-09-09)</td>
+                </tr>
+                <tr>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>1</td>
+                    <td>152000</td>
+                    <td><a href="#">확인</a></td>
+                    <td>GW 상신 중(2020-09-09)</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">ERP 전송</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- 지출결의서 일괄인쇄 -->
+    <div id="modal-wrap" class="print-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">지출결의서 일괄인쇄</p>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">적용 월</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+
+			<table class="mt50">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="140px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="286px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox501" name="checkbox501">
+                        <label for="checkbox501"></label>
+                    </th>
+                    <th>부서</th>
+                    <th>사용자</th>
+                    <th>직급</th>
+                    <th>적용월</th>
+                    <th>사용금액</th>
+                    <th>경비건수</th>
+                    <th>연동결과</th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" id="checkbox502" name="checkbox502">
+                        <label for="checkbox502"></label>
+                    </td>
+                    <td>IT개발 1팀</td>
+                    <td>왜그래</td>
+                    <td>차장</td>
+                    <td>2017년 9월분 - 8</td>
+                    <td class="right">524,000 원</td>
+                    <td>152,000</td>
+                    <td>파일 생성(2017-09-01)</td>
+                </tr>
+            </table>
+            
+            <table class="search-table mt20">
+                    <colgroup>
+                        <col width="150px">
+                        <col width="*">
+                    </colgroup>
+                    <tr>
+                        <th>인쇄옵션 선택</th>
+                        <td>
+                            <input type="checkbox" id="checkboxp1" name="checkboxp1">
+                            <label for="checkboxp1">첨부파일 포함</label>
+                            <input type="checkbox" id="checkboxp2" name="checkboxp2">
+                            <label for="checkboxp2">영수증 양식 포함</label>
+                        </td>
+                    </tr>
+                </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">인쇄하기</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>

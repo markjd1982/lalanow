@@ -1,0 +1,158 @@
+/* login */
+
+#login{
+	min-height: 100vh;
+	background: $gray;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	&:after{
+		display: block;
+		width: 100%;
+		height: 35vh;
+		background: $primary;
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 0;
+	}
+	.login-wrap{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		z-index: 1;
+		transform: translate(-50%,-50%);
+		width: 300px;
+		border-radius: 30px;
+  		box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.2);
+		background: $primary;
+		.top{
+			width: 100%;
+			height: 112px;
+			background: url("../_images/login/ci@2x.png") no-repeat center / 147px;
+		}
+		.wrap{
+			background: $white;
+			border-radius: 50px 0 30px 30px;
+			padding: 30px;
+			.flex{
+				border-bottom: 1px solid $lineColor;
+			}
+			.form-wrap{
+				p{
+					font-size: 16px;
+					font-weight: 700;
+				}
+				input{
+					width: 100%;
+					border: 1p solid $lineColor;
+					border-radius: 10px;
+					height: 40px;
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			}
+			.error{
+				color: $red;
+			}
+			.remaining-time{
+				color: $black;
+				font-size: 14px;
+				span{
+					color: $red;
+				}
+			}
+			.mobile-num{
+				margin-top: 20px;
+				font-size: 16px;
+				font-weight: 700;
+				color: $black;
+			}
+			.mobile-wrap{
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px;
+				input{
+					width: 150px;
+					border: 1p solid $lineColor;
+					border-radius: 10px;
+					height: 40px;
+					
+				}
+				.btn-ok{
+					width: 80px;
+					line-height: 40px;
+					padding: 0 10px;
+					border-radius: 10px;
+					font-size: 16px;
+					font-weight: 700;
+					color: $white;
+					background-color: #3b405d;
+				}
+			}
+			button{
+				background: $second;
+				color: #fff;
+				height: 50px;
+				border-radius: 25px;
+				width: 100%;
+				font-size: 16px;
+				font-weight: 700;
+				margin-top: 20px;
+			}
+			.image-text{
+				background: $textColor;
+				color: $white;
+				height: 190px;
+				text-align: center;
+				margin-top: 20px;
+			}
+			.wrapper-top{
+				text-align: center;
+				margin-top: 10px;
+				font-size: 30px;
+				padding-bottom: 20px;
+				border-bottom: 1px solid $lineColor;
+				margin-bottom: 30px;
+				font-weight: 700;
+			}
+            .inpWrap{
+                display: flex;
+                margin-top: 10px;
+                align-items: flex-start;
+                #answer{
+                    width: 150px;
+                }
+                button{
+                    height: 40px;
+                    margin-top: 0;
+                    margin-left: 10px;
+                    border: 1px solid #dedede;
+                    background: #fff;
+                    color: #454545;
+                    border-radius: 10px;
+                    font-size: 14px;
+                }
+            }
+		}
+	}
+	.cs{
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		.number{
+			font-size: 30px;
+  			font-weight: bold;
+			color: $white;
+			margin-bottom: 10px;
+		}
+		.time{
+			font-size: 14px;
+			color: $white;
+			margin-bottom: 30px;
+		}
+	}
+    
+}

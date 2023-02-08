@@ -1,0 +1,35 @@
+/* Layout */
+
+#container{
+	width: 1920px;
+	margin: 0 auto;
+	display: flex;
+}
+
+#contents{
+	width: 1600px;
+	background-color: #505562;
+}
+
+.point{
+	color: $second !important;
+}
+
+
+#loading{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    background: url("../_images/common/loading@2x.png") no-repeat center;
+    background-size: 68px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	100% {
+		transform: rotate(360deg);
+	}
+}

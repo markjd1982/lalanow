@@ -1,0 +1,255 @@
+/* table */
+
+
+table{ 
+	border-top:2px solid #454545;
+	text-align:left;
+	width: 100%;
+	th{
+		line-height: 1.6;
+		border-bottom:1px solid #cccccc;
+		//border-left:1px solid $lineColor; 
+		padding:5px 0;
+		color:$textColor;
+		font-weight: 700;
+		background-color:$bgColor; 
+		vertical-align:middle;
+		text-align: center;
+  		font-size: 14px;
+		height: 40px;
+        &.up,&.down{
+            cursor: pointer;
+        }
+		&.left{
+			text-align: left;
+			padding-left: 10px;
+		}
+		&.up:after{
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			content: "";
+			background: url("../_images/common/icon-s-caret-up@2x.png")no-repeat 50% 1px / 16px;
+			margin-left: 5px;
+		}
+		&.down:after{
+			width: 16px;
+			height: 16px;
+			display: inline-block;
+			content: "";
+			background: url("../_images/common/icon-s-caret-down@2x.png")no-repeat 50% 1px / 16px;
+			margin-left: 5px; 
+		}
+		&.on{
+			background-color: $second;
+			color: $white;
+			&.up:after{
+				background: url("../_images/common/icon-s-caret-up-w@2x.png")no-repeat 50% 1px / 16px;
+			}
+			&.down:after{
+				background: url("../_images/common/icon-s-caret-down-w@2x.png")no-repeat 50% 1px / 16px;
+			}
+		}
+        strong{
+            color: #f94450;
+        }
+	}
+	td{
+		line-height: 1.6;
+		border-bottom:1px solid $lineColor;
+		padding:5px 10px; 
+		vertical-align:middle;
+		text-align: center;
+		font-size: 14px;
+		font-weight: 400;
+		color: $textColor;
+		height: 50px;
+        background: #fff;
+		&.left{
+			text-align: left;
+		}
+		&.right{
+			text-align: right;
+		}
+        &.notice{
+            background: url("../_images/common/icon-s-notice@2x.png") no-repeat center;
+            background-size: 20px;
+        }
+        .ico-file{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: url("../_images/common/icon-s-clip@2x.png") no-repeat center;
+            background-size: 16px;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+        button, .btn{
+            border-radius: 10px;
+            background: $primary;
+            height: 40px;
+            color: #fff;
+            width: 120px;
+            display: inline-block;
+            line-height: 38px;
+            text-decoration: none;
+            font-weight: 400;
+            &.btn{
+                width: 100px;
+            }
+			&.sec{
+				background-color: $white;
+				border: 1px solid #dedede;
+				color: $textColor
+			}
+            &.btn-plus{
+                width: 20px;
+                height: 20px;
+                border-radius: 0;
+                background: url("../_images/common/formTreePlus.png") no-repeat center;
+                background-size: 20px;
+                &.on{
+                    background-image: url("../_images/common/formTreeMinus.png");
+                }
+            }
+            
+        }
+        &.expand{
+            padding: 0;
+            height: 0;
+            border-bottom: none;
+        }
+        &.flex{
+            display: flex;
+			align-items: center;
+            &.bet{
+                justify-content: space-between;
+            }
+        }
+        .move-ui{
+            width: 40px;
+            height: 40px;
+            border: 1px solid $lineColor;
+            border-radius: 0;
+            &.down{
+                background: url("../_images/common/icon-s-caret-down@2x.png") no-repeat center;
+                background-size: 24px;
+            }
+            &.up{
+                background: url("../_images/common/icon-s-caret-up@2x.png") no-repeat center;
+                background-size: 24px;
+            }
+        }
+        &.rate-a{
+            color: #45b821;
+            font-weight: 700;
+        }
+        &.rate-b{
+            color: #7dd501;
+            font-weight: 700;
+        }
+        &.rate-c{
+           color: #ffa443; 
+            font-weight: 700;
+        }
+        &.rate-d{
+           color: #d82800; 
+            font-weight: 700;
+        }
+        &.rate-n{
+            color: #8c8c8c;
+            font-weight: 700;
+        }
+        &.red{
+            color: $red;
+        }
+	}
+	th:first-child,td:first-child{
+		border-left:none;
+	}
+	&.search-table{
+		th{
+			text-align: left;
+			padding-left: 10px;
+			height: 50px;
+            position: relative;
+            .info{
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 100%;
+                background: url("../_images/common/icon-s-info@2x.png") no-repeat center;
+                background-size: 24px;
+                span{
+                    position: absolute;
+                    bottom: 34px;
+                    left: 0;
+                    border: 2px solid $second;
+                    padding: 15px;
+                    color: $textColor;
+                    width: 300px;
+                    background: #fff;
+                    display: none;
+                    line-height: 1.4;
+                    font-weight: 400;
+                }
+                &:hover{
+                    span{
+                        display: block;
+                    }
+                }
+            }
+		}
+        td{
+            text-align: left;
+        }
+	}
+	&.resist{
+		th,td{
+			text-align: left;
+		}
+		.cate{
+			text-align: center;
+		}
+	}
+    tfoot{
+        td{
+            background:$bgColor;
+        }
+        &.red{
+            td{
+                color: $red;
+            }
+        }
+    }
+    .red{
+        td{
+            color: $red;
+        }
+    }
+    .del{
+        td{
+            text-decoration: line-through;
+        }
+    }
+    .gray td{
+        background: #f5f5f5;
+    }
+    .gray2 td{
+        background: #cccccc;
+    }
+    .green td{
+        background: #EDFAF4;
+        font-weight: 700;
+    }
+    table{
+        border-top: none;
+    }
+}
+
+
+
+

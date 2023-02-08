@@ -1,0 +1,93 @@
+/* Calendar */
+
+.ui-datepicker.ui-widget-content{
+	padding: 0;
+	width: 300px !important;
+	border: 1px solid $lineColor;
+	border-radius: 20px;
+	text-align: center;
+	&.ui-widget-content{
+		border-radius: 20px;
+		background: $white;
+		.ui-datepicker-header{
+			width: 300px;
+			height: 60px;
+			background: $primary;
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+			.ui-datepicker-title{
+				color: $white;
+				font-size: 20px;
+				line-height: 60px;
+			}
+			.ui-datepicker-prev{
+				background: url("../_images/_calendar/btn-prev@2x.png") no-repeat center / 20px;
+				top: 50%;
+				transform: translateY(-35%);
+				left: 50px;
+			}
+			.ui-datepicker-next{
+				background: url("../_images/_calendar/btn-next@2x.png") no-repeat center / 20px;
+				top: 50%;
+				transform: translateY(-35%);
+				right: 50px;
+			}
+		}
+		.ui-datepicker-calendar{
+			width: 280px;
+			border: none;
+			th{
+				//line-height: 30px;
+				background: $white;
+				font-size: 14px;
+				color: $textColor;
+				font-weight: 400;
+				&:nth-child(1){
+					color: $red;
+				}
+			}
+			td{
+				vertical-align: middle;
+				text-align: center;
+                height: 30px;
+                line-height: 30px;
+                padding: 0;
+				a{
+					display: inline-block;
+					border: 0;
+					background: $white;
+					text-align: center;
+					//line-height: 40px;
+					width: 40px;
+					height: 40px;
+					border-radius: 100%;
+					&.ui-state-highlight{
+						color: $white;
+						background: $primary;
+						//line-height: 30px;
+						width: 30px;
+						height: 30px;
+					}
+				}
+				&:nth-child(7n+1) {
+					a{
+						color: $red;
+					}
+				}
+			}
+			.ui-state-active{
+				color: #ffffff;
+				background: $second;
+				//line-height: 30px;
+				width: 30px;
+				height: 30px;
+			}
+		}
+	}
+}
+
+
+.ui-datepicker td.holiday a, .ui-datepicker td.holiday a:hover {
+	 color:$red;
+   }
+

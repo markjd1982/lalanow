@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>기업정보 조회<p>기업 재무정보 및 신용 정보를 제공합니다.(NICE디앤비 제공)</p></h2>
+            
+            <div class="tab1-wrap mt30">
+                <ul>
+                    <li><a href="#">일반현황</a></li>
+                    <li><a href="#">재무재표</a></li>
+                    <li class="on"><a href="#">신용등급</a></li>
+                    <li><a href="#">신용상태정보</a></li>
+                </ul>
+            </div>
+            
+            <div class="tab2-wrap mt30">
+                <ul>
+                    <li><a href="#">Clip 신용등급</a></li>
+                    <li class="on"><a href="#">현금흐름등급</a></li>
+                    <li><a href="#">CRI 등급</a></li>
+                </ul>
+            </div>
+            
+            <h4>현금흐름 등급</h4>
+            
+            <div class="clip-wrap">
+                <ul class="rate">
+                    <li class="value b">CFR3</li>
+                    <li>결산일 : 2021-01-31</li>
+                </ul>
+                <div class="chart">
+                    <ul class="legend">
+                        <li>보류</li>
+                        <li>위험</li>
+                        <li>열위</li>
+                        <li>보통</li>
+                        <li>양호</li>
+                        <li>우수</li>
+                    </ul>
+                    <ul class="graph">
+                        <li class="c">
+                            <p class="bar"></p>
+                            <p class="txt">CFR6</p>
+                        </li>
+                        <li class="c">
+                            <p class="bar"></p>
+                            <p class="txt">CFR5</p>
+                        </li>
+                        <li class="c">
+                            <p class="bar"></p>
+                            <p class="txt">CFR4</p>
+                        </li>
+                        <li class="b on">
+                            <p class="bar"></p>
+                            <p class="txt">CFR3</p>
+                        </li>
+                        <li class="b">
+                            <p class="bar"></p>
+                            <p class="txt">CFR2</p>
+                        </li>
+                        <li class="a">
+                            <p class="bar"></p>
+                            <p class="txt">AAA</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="ju mt50">현금흐름이 안정적이나 소요자금의 자체 창출능력이 상위등급에 비하여 다소 열위한 수준</p>
+            </div>
+            
+            <p class="mt10 ju">기업활동을 통해 나타나는 현금의 유입과 유출을 말합니다.현금흐름에는 영업활동에 의한 현금흐름, 투자활동에 의한 현금흐름, 재무활동에 의한 현금흐름 등 이 있습니다.기업의 현금흐름이 원활하지 못하면 아무리 많은 이익을 내더라도 부도를 낼 수 있으므로 기업가치를 재는 척도로 활용되며, 현금흐름을 담보로 대출이 이루어지는 금 융기법도 나타나게 되었습니다. 기업의 유동성을 측정하는 가장 직접적인 도구입니다. 현금흐름등급은 현금흐름의 건전성에 따라 기업의 지급능력(상황능력)을 분류한 기호입니다.</p>
+            
+            <h4>현금흐름등급 정의</h4>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="120px">
+                    <col width="*">
+                </colgroup>
+                <tr>
+					<th>구분</th>
+                    <th>등급정의</th>
+                </tr>
+                <tr>
+                    <td class="rate-a">A(CFR1)</td>
+                    <td>현금흐름이 안정적이며 소요자금의 자체 창출능력이 매우 양호한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-b">B+(CFR2)</td>
+                    <td>현금흐름이 안정적이나 소요자금의 자체 창출능력이 상위등급에 비하여 다소 열위한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-b">B(CFR3)</td>
+                    <td>현금흐름 창출능력이 보통 수준 이상이나, 향후 환경악화에 따라 현금흐름의 저하가능성이 다소 있는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-c">C+(CFR4)</td>
+                    <td>현금흐름 창출능력이 보통 수준이나, 향후 환경악화에 따라 현금흐름의 저하가능성이 존재하는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-c">C(CFR5)</td>
+                    <td>현금흐름 창출능력이 낮은 수준이거나, 소요자금 대비 현금창출액이 적어 현금지급능력이 취약한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-c">D(CFR6)</td>
+                    <td>현금흐름 및 현금지급능력이 매우 취약한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-n">E(NR1)</td>
+                    <td>재무정보의 신뢰성이 결여되었거나, 불완전한 재무정보 보유(원가명세서 부재) –판정제외</td>
+                </tr>
+                <tr>
+                    <td class="rate-n">E(NR2)</td>
+                    <td>결산자료 2개년 미만으로 현금흐름 산출 불가 -판정보류</td>
+                </tr>
+            </table>
+		</div>
+	</div>
+    
+</body>
+	
+
+</html>

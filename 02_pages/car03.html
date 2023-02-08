@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>자주가는 거래처<p>자주가는 거래처를 등록하여 운행기록부를 편리하게 작성합니다.</p></h2>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">검색</p>
+                            <div class="select-wrap" style="width:150px;">
+                                <select>
+                                    <option>거래처명</option>
+                                </select>
+                            </div>
+                            <input class="ml10" type="text" placeholder="Placeholder" style="width:150px;">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap"> 
+					<a href="#" class="dis">삭제</a>
+                    <a href="#" class="pri btn-modal" data-target="apply-modal">추가</a>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="50px">
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="380px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                </colgroup>
+                <tr class="table-group">
+					<th>
+						<input type="checkbox" id="checkbox201" name="checkbox201">
+						<label for="checkbox201"></label>
+					</th>
+                    <th>번호</th>
+					<th>거래처명</th>
+					<th>거래처 주소</th>
+					<th>등록 부서</th>
+					<th>등록 사용자</th>
+					<th>구분</th>
+					<th>등록일</th>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox202" name="checkbox202">
+						<label for="checkbox202"></label>
+					</td>
+					<td>3</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">거래처8</a></td>
+                    <td>경기도 수원시 권선구 권선동 12-8</td>
+                    <td>인터넷사업팀</td>
+                    <td>이강호</td>
+                    <td>공통</td>
+                    <td>2017-12-10</td>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox203" name="checkbox203">
+						<label for="checkbox203"></label>
+					</td>
+                    <td>2</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">거래처8</a></td>
+                    <td>경기도 수원시 권선구 권선동 12-8</td>
+                    <td>인터넷사업팀</td>
+                    <td>이강호</td>
+                    <td>공통</td>
+                    <td>2017-12-10</td>
+                </tr>
+				<tr>
+					<td>
+						<input type="checkbox" id="checkbox204" name="checkbox204">
+						<label for="checkbox204"></label>
+					</td>
+                    <td>1</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">거래처8</a></td>
+                    <td>경기도 수원시 권선구 권선동 12-8</td>
+                    <td>인터넷사업팀</td>
+                    <td>이강호</td>
+                    <td>공통</td>
+                    <td>2017-12-10</td>
+                </tr>
+            </table>
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+	
+	<!--  자주가는 거래처 등록  -->
+	<div id="modal-wrap" class="apply-modal">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">자주가는 거래처 등록</p>
+			<table class="mt20 search-table">
+                <colgroup>
+                    <col width="140px">
+                    <col width="387px">
+                </colgroup>
+                <tr>
+                    <th>차량번호</th>
+                    <td class="flex"><input type="text" value="나이스데이터"></td>
+                </tr>
+                <tr>
+                    <th>구분</th>
+                   <td>
+                        <input type="radio" id="radio31" name="radio31" checked>
+                        <label for="radio31">공통</label>
+                        <input type="radio" id="radio32" name="radio31">
+                        <label for="radio32">개인</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td><input type="text" value="서울특별시 영등포구 여의도동 123-1"></td>
+                </tr>
+            </table>
+			
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+	
+
+</html>

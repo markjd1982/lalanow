@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>차량 관리<p>회사에서 사용중인 차량을 등록합니다.</p></h2>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">사용여부</p>
+                            <div class="select-wrap" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <p class="label ml40">차량정보</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width:150px;">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap"> 
+					<a href="#" class="sec">사용자 등록해제</a>
+                    <a href="#" class="pri btn-modal" data-target="car-apply">차량등록</a>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="50px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="190px">
+                    <col width="120px">
+                    <col width="120px">
+                </colgroup>
+                <tr class="table-group">
+					<th>
+						<input type="checkbox" id="checkbox201" name="checkbox201">
+						<label for="checkbox201"></label>
+					</th>
+                    <th class="down item">차량번호</th> 
+                    <th class="down item">차종</th>
+                    <th class="down item">사용자</th>
+                    <th class="down item">부서</th>
+                    <th class="down item">직급</th>
+                    <th class="down item">시스템 등록일 기준<br>계기판의 거리</th>
+                    <th class="down item">사용여부</th>
+                    <th class="down item">시스템 등록일</th>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox202" name="checkbox202">
+						<label for="checkbox202"></label>
+					</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">34가4321</a></td>
+                    <td>모닝</td>
+                    <td>홍길동</td>
+                    <td>경영지원실</td>
+                    <td>대표이사</td>
+                    <td>4,125</td>
+                    <td>사용종료</td>
+                    <td>2017-10-12</td>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox203" name="checkbox203">
+						<label for="checkbox203"></label>
+					</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">34가4321</a></td>
+                    <td>모닝</td>
+                    <td>홍길동</td>
+                    <td>경영지원실</td>
+                    <td>대표이사</td>
+                    <td>4,125</td>
+                    <td>사용종료</td>
+                    <td>2017-10-12</td>
+                </tr>
+				<tr>
+					<td>
+						<input type="checkbox" id="checkbox204" name="checkbox204">
+						<label for="checkbox204"></label>
+					</td>
+                    <td><a href="#" class="btn-modal" data-target="car-modify">34가4321</a></td>
+                    <td>모닝</td>
+                    <td>홍길동</td>
+                    <td>경영지원실</td>
+                    <td>대표이사</td>
+                    <td>4,125</td>
+                    <td>사용종료</td>
+                    <td>2017-10-12</td>
+                </tr>
+            </table>
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+	
+	<!--  차량 등록  -->
+	<div id="modal-wrap" class="car-apply">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">차량 등록</p>
+			<h4>회사차량 정보</h4>
+			<table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>차량번호</th>
+                    <td class="flex"><input type="text" value="36가4321"><button class="ml10">검색</button></td>
+                </tr>
+                <tr>
+                    <th>차종</th>
+                    <td><input type="text" value="그랜저IG"></td>
+                </tr>
+                <tr>
+                    <th>시스템 등록일 기준<br>계기판의 거리</th>
+                    <td><input type="text" value="982Km"></td>
+                </tr>
+            </table>
+			<h4>임직원 정보</h4>
+            <table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>이름</th>
+                    <td class="flex"><input type="text" value="이강호"><button class="ml10">검색</button></td>
+                </tr>
+                <tr>
+                    <th>부서</th>
+                    <td><input type="text" value="부서" disabled></td>
+                </tr>
+                <tr>
+                    <th>직급</th>
+                    <td><input type="text" value="대리" disabled></td>
+                </tr>
+                <tr>
+                    <th>연락처</th>
+                    <td><input type="text" value="010-1234-1234" disabled></td>
+                </tr>
+                <tr>
+                    <th>권한</th>
+                    <td><input type="text" value="임직원" disabled></td>
+                </tr>
+            </table>
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+	
+    <!--  차량 수정  -->
+	<div id="modal-wrap" class="car-modify">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">차량 수정</p>
+			<h4>회사차량 정보</h4>
+			<table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>차량번호</th>
+                    <td><input type="text" value="36가4321" disabled></td>
+                </tr>
+                <tr>
+                    <th>차종</th>
+                    <td><input type="text" value="그랜저IG"></td>
+                </tr>
+                <tr>
+                    <th>시스템 등록일 기준<br>계기판의 거리</th>
+                    <td><input type="text" value="982Km"></td>
+                </tr>
+				<tr>
+					<th>사용여부</th>
+					<td>
+                        <input type="radio" id="radio31" name="radio31" checked>
+                        <label for="radio31">네</label>
+                        <input type="radio" id="radio32" name="radio31">
+                        <label for="radio32">아니오</label>
+                    </td>
+				</tr>
+            </table>
+			<h4>임직원 정보</h4>
+            <table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>이름</th>
+                    <td class="flex"><input type="text" value="이강호"><button class="ml10">검색</button></td>
+                </tr>
+                <tr>
+                    <th>부서</th>
+                    <td><input type="text" value="부서" disabled></td>
+                </tr>
+                <tr>
+                    <th>직급</th>
+                    <td><input type="text" value="대리" disabled></td>
+                </tr>
+                <tr>
+                    <th>연락처</th>
+                    <td><input type="text" value="010-1234-1234" disabled></td>
+                </tr>
+                <tr>
+                    <th>권한</th>
+                    <td><input type="text" value="임직원" disabled></td>
+                </tr>
+            </table>
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+</body>
+	
+
+</html>

@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+<link href="../_css/jquery-ui.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../_js/jquery-ui.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>결제취소 현황<p>결제가 취소된 내역을 표시합니다. 매입취소는 반영에 3일 이상 소요될 수 있습니다.</p></h2>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="date-wrap">
+                                <input type="text" style="width: 215px;" placeholder="날짜 입력" id="datepicker1">
+                            </div>
+                            <em>~</em>
+                            <div class="date-wrap">
+                                <input type="text" style="width: 215px;" placeholder="날짜 입력" id="datepicker2">
+                            </div>
+                            <div class="month-btn-wrap">
+                                <button class="on">당월</button>
+                                <button>전월</button>
+                                <button>올해</button>
+                                <button>전년도</button>
+                            </div>
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <p class="label">검색</p>
+                                <div class="select-wrap mr10" style="width:150px;">
+                                    <select>
+                                        <option>카드사</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="검색어 입력" style="width: 200px">
+                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                <label for="checkbox1" class="ml20">지결 전</label>
+                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                <label for="checkbox2">지결 중</label>
+                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                <label for="checkbox3">지결 완료</label>
+                                <input type="checkbox" id="checkbox4" name="checkbox4">
+                                <label for="checkbox4">연동 완료</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="80px">
+                    <col width="100px">
+                    <col width="150px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="160px">
+                    <col width="120px">
+                </colgroup>
+                <tr class="table-group">
+                    <th>번호</th> 
+                    <th class="down item">사용일자</th>
+                    <th class="down item">사용시간</th>
+                    <th class="down item">결제유형</th>
+                    <th class="down item">사용처</th>
+                    <th class="down item">부서명</th>
+                    <th class="down item">사용자</th>
+                    <th class="down item">취소금액</th>
+                    <th class="down item">결재상태</th>
+                    <th class="down item">단계</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>롯데-0499</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>지결 전</td>
+                    <td><button class="btn btn-expand" data-target="idx1">승인취소</button></td>
+                </tr>
+                <tr>
+                    <td colspan="10" class="expand">
+                        <div id="expand-slide" class="gray idx1">
+                            <div class="wrap">
+                                
+                                <div class="col2-flex">
+                                    
+                                    <div class="layout-left">
+                                        <h3>취소내역</h3>
+                                        <div class="box">
+                                            <h4>결제정보</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>카드번호</li>
+                                                    <li>롯데 1234-****-****-1234</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사용금액</li>
+                                                    <li>30,800원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>결제상태</li>
+                                                    <li>승인취소</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사용일시</li>
+                                                    <li>2019-07-10(월) 15:32</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>취소일시</li>
+                                                    <li>2019-07-11(화) 10:11</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>결제통화</li>
+                                                    <li>USD</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>현지금액</li>
+                                                    <li>11.32</li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="mt30">가맹점정보</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>사용처</li>
+                                                    <li>지에스리테일(GS25여의성우점)</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>업종</li>
+                                                    <li>편의점</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사업자번호</li>
+                                                    <li>123-45-67890</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>과세유형</li>
+                                                    <li>일반과세자</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>전화번호</li>
+                                                    <li>02-312-1234</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>원 사업자번호</li>
+                                                    <li>123-45-12345</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>원 가맹점명</li>
+                                                    <li>쿠팡</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>주소</li>
+                                                    <li>서울 서대문구 충정로3가 58-1 2호</li>
+                                                </ul>
+                                            </div>
+                                            <p class="total">7,600원</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="layout-right">
+                                        
+                                         <h4 class="mt20">사용자정보</h4>
+                                        <div class="con">
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">사용자</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">부서</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">메모</p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="total">사용금액 합계 : <strong>7,600원</strong></p>
+                                    
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="btn-con-wrap"> 
+                                    <a href="#" class="dis expand-close">취소</a>
+                                    <a href="#" class="pri">저장</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>롯데-0499</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>지결 전</td>
+                    <td><button class="btn">승인취소</button></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>롯데-0499</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>지결 전</td>
+                    <td><button class="btn">승인취소</button></td>
+                </tr>
+                
+            </table>
+            
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+    
+    <!-- 엑셀 다운로드 -->
+    <div id="modal-wrap" class="excel-modal">
+		<div class="modal-con w500">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 엑셀 다운로드</p>
+
+			<table class="mt20 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>현재 비밀번호</th>
+                    <td class="flex">
+                        <div class="date-wrap mr10" style="width: 130px;">
+                            <input type="text" placeholder="날짜 입력" id="datepicker5">
+                        </div>
+                        <div class="date-wrap" style="width: 130px;">
+                            <input type="text" placeholder="날짜 입력" id="datepicker6">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- 경비일괄등록 -->
+    <div id="modal-wrap" class="reg-all-modal">
+		<div class="modal-con" style="width: 1080px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 등록</p>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <p class="label ml20">검색</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width:150px;">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+            </div>
+
+			<table class="mt20">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="246px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox201" name="checkbox201">
+                        <label for="checkbox201"></label>
+                    </th>
+                    <th>사용일자</th>
+                    <th>결제유형</th>
+                    <th>사용처</th>
+                    <th>사용금액</th>
+                    <th>부서명</th>
+                    <th>사용자</th>
+                    <th>단계</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox202" name="checkbox202">
+                        <label for="checkbox202"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox203" name="checkbox203">
+                        <label for="checkbox203"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox204" name="checkbox204">
+                        <label for="checkbox204"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox205" name="checkbox205">
+                        <label for="checkbox205"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox206" name="checkbox206">
+                        <label for="checkbox206"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close btn-expand" data-target="idx5">저장</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+<script>
+    
+$(function(){
+        
+    $( "#datepicker1,#datepicker2,#datepicker3,#datepicker4,#datepicker5,#datepicker6" ).datepicker({
+        inline: true,
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    });
+    
+});
+    
+</script>
+
+</html>

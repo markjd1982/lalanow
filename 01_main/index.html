@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>lala now</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/swiper.css" rel="stylesheet" type="text/css">
+<link href="../_css/main.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../_js/chart.js"></script>
+<script type="text/javascript" src="../_js/chartjs-plugin-datalabels.js"></script>
+
+</head>
+<body class="main">
+	 
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb">
+			<div class="top">
+				<a href="#" class="lalanow_logo"></a>
+			</div>
+			<div class="menu-wrap">
+				<ul>
+					<li>
+						<a href="#">상점관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon2">파트너사관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon3 on">방송관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon4">방송상품관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon5">전시관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon6">회원관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon7">게시판관리</a>
+					</li>
+					<li>
+						<a href="#" class="icon8">시스템관리</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div id="contents">
+			<div class="main-wrapper">
+				<div class="main-topwrap">
+					<p class="main-top-left">Dashboard</p>
+					<div class="main-top-right">
+						<p class="name-txt mr25">라라스테이션 <span>홍길동</span>님</p>
+						<div class="select-wrap mr25" style="width:124px">
+							<select>
+								<option>KOREAN</option>
+							</select>
+						</div>
+						<p class="alarm mr15"><button></button><span>2</span></p>
+						<p class="books mr30"><button></button></p>
+					</div>
+				</div>
+				<div class="main-topcon">
+					<div class="item1">
+						<p class="img-1"></p>
+						<p>현재라이브중</p>
+						<p class="mont">3</p>
+					</div>
+					<div class="item1">
+					</div>
+					<div class="item1">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+	
+<script>
+
+	
+	
+	var context = document.getElementById('myChart1').getContext('2d');
+            var myChart1 = new Chart(context, {
+				plugins:[Chart],
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '업무추진비','사기진작비','출장비','지급수수료','차량유지비'],
+                    datasets: [
+                        { //데이터
+                            label: '영업 1실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                365,315,235,185,135 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#4866db',
+                            ],
+                        },
+						{ //데이터
+                            label: '영업 2실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                50,45,40,35,30 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#3d91ff',
+                            ],
+                        },
+						{ //데이터
+                            label: '개발 1실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                80,70,75,70,65 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#48e3ff',
+                            ],
+                        },
+						{ //데이터
+                            label: '경영지원실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                65,60,55,50,45 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#51d498',
+                            ],
+							legend: false,
+                        },
+						{ //데이터
+                            label: '기획실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                200,180,170,150,140 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#eaeff5',
+                            ],
+							legend: false,
+                        },
+                    ]
+                },
+                options: {
+					borderWidth: 0,  //바 사이 간격
+					borderRadius: 6, //바 radius
+					weight : 10,
+					title : {
+						display : true,
+					},
+					plugins: {
+						legend: {
+							display: true,
+							position : 'bottom',
+							labels:{
+								usePointStyle : true,
+								boxWidth : 12,
+								boxHeight : 12,
+								borderRadius : 100,
+								font: {
+									size: 14
+								}
+							},
+						},
+					},
+					barThickness : 32,
+					scales: {
+						x: {
+							stacked: true,
+							grid: {
+								display: false,
+								//drawBorder : false,
+								},
+							ticks: {
+								font:{
+									size:14,
+								}
+							}
+						},
+						y: {
+							stacked: true,
+							grid: {
+								display: false,
+								drawBorder : false,
+							},
+							ticks: {
+								display: false,
+							},
+
+						},
+					}
+                }
+            });
+
+	var context = document.getElementById('myChart2').getContext('2d');
+            var myChart2 = new Chart(context, {
+				plugins:[Chart],
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '영업1실','영업2실','개발1실','경영지원실','기획실'],
+                    datasets: [
+                        { //데이터
+                            label: '업무추진비', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                155,105,235,185,135 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#4866db',
+                            ],
+                        },
+						{ //데이터
+                            label: '사기진작비', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                50,45,40,35,30 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#3d91ff',
+                            ],
+                        },
+						{ //데이터
+                            label: '출장비', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                80,70,75,70,65 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#48e3ff',
+                            ],
+                        },
+						{ //데이터
+                            label: '지급수수료', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                65,60,55,50,45 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#51d498',
+                            ],
+							legend: false,
+                        },
+						{ //데이터
+                            label: '차량유지비', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                120,100,170,120,100 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#eaeff5',
+                            ],
+							legend: false,
+                        },
+                    ]
+                },
+                options: {
+					borderWidth: 0,  //바 사이 간격
+					borderRadius: 6, //바 radius
+					weight : 10,
+					title : {
+						display : true,
+					},
+					plugins: {
+						legend: {
+							display: true,
+							position : 'bottom',
+							labels:{
+								usePointStyle : true,
+								boxWidth : 12,
+								boxHeight : 12,
+								borderRadius : 100,
+								font: {
+									size: 12
+								}
+							},
+						},
+					},
+					barThickness : 32,
+					scales: {
+						x: {
+							stacked: true,
+							grid: {
+								display: false,
+								//drawBorder : false,
+								},
+							ticks: {
+								font:{
+									size:14,
+								}
+							}
+						},
+						y: {
+							stacked: true,
+							grid: {
+								display: false,
+								drawBorder : false,
+							},
+							ticks: {
+								display: false,
+							},
+
+						},
+					}
+                }
+            });	
+	
+	var context = document.getElementById('myChart3').getContext('2d');
+            var myChart3 = new Chart(context, {
+                type: 'bar', // 차트의 형태
+                data: { // 차트에 들어갈 데이터
+                    labels: [
+                        //x 축
+                        '1','2','3','4','5','6','7','8','9','10','11','12'],
+                    datasets: [
+                        { //데이터
+                            label: '영업1실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                155,105,235,185,135,155,105 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#4866db',
+                            ],
+							borderColor:'#4866db',
+							//stack: 'combined',
+							type:'line',
+                        },
+						{ //데이터
+                            label: '영업2실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                50,45,40,35,30,50,45 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#3d91ff',
+                            ],
+							borderColor:'#3d91ff',
+							//stack: 'combined',
+							type:'line',
+                        },
+						{ //데이터
+                            label: '개발1실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                80,70,75,70,65,80,70 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#48e3ff',
+                            ],
+							borderColor:'#48e3ff',
+							//stack: 'combined',
+							type:'line',
+                        },
+						{ //데이터
+                            label: '경영지원실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                65,60,55,50,45,65,60 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#51d498',
+                            ],
+							borderColor:'#51d498',
+							//stack: 'combined',
+							type:'line',
+							legend: false,
+                        },
+						{ //데이터
+                            label: '기획실', //차트 제목
+                            fill: false, // line 형태일 때, 선 안쪽을 채우는지 안채우는지
+                            data: [
+                                120,100,170,120,100,120,100 //x축 label에 대응되는 데이터 값
+                            ],
+                            backgroundColor: [
+                                //색상
+                                '#eaeff5',
+                            ],
+							
+							borderColor:'#eaeff5',
+							//stack: 'combined',
+							type:'line',
+							legend: false,
+                        },
+                    ]
+                },
+                options: {
+					borderWidth: 1,  //바 사이 간격
+					//borderRadius: 6, //바 radius
+					//weight : 10,
+					title : {
+						display : true,
+					},
+					plugins: {		// 색인 
+						legend: {
+							display: true,
+							position : 'bottom',
+							labels:{
+								usePointStyle : true,
+								boxWidth : 12,
+								boxHeight : 12,
+								borderRadius : 100,
+								font: {
+									size: 12
+								}
+							},
+						},
+					},
+					//barThickness : 32,
+					scales: {
+						x: {
+							stacked: true,
+							grid: {
+								display: false,
+								//drawBorder : false,
+								},
+							ticks: {
+								font:{
+									size:14,
+								}
+							}
+						},
+						y: {
+							stacked: true,
+							grid: {
+								display: false,
+								drawBorder : false,
+							},
+							ticks: {
+								display: false,
+							},
+
+						},
+					}
+                }
+            });
+    
+    
+       
+</script>
+</html>

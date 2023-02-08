@@ -1,0 +1,745 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title></title>
+<script type="text/javascript" src="_list/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="_list/guide.js"></script>
+<link type="text/css" rel="stylesheet" href="_list/guide.css" />
+</head>
+<body>
+<div id="list_wrap">
+	<!-- header s -->
+	<div id="header">
+		<h1>오토빌 관리자</h1>
+		<ul class="gnb">
+			<li><a href="index.html" class="on">국문</a></li>
+		</ul>
+	</div><!--// header e -->
+
+
+	<!-- container s -->
+	<div id="container">
+		<div id="g_content">
+			<table id="focus" class="mlist">
+				<colgroup>
+				<col width="3%" />
+				<col width="6%" />
+				<col width="14%" />
+				<col width="10%" />
+				<col width="14%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="10%" />
+				<col width="*" />
+				</colgroup>
+				<thead>
+					<tr onMouseDown="toggleed(this)">
+						<th class="first">번호</th>
+						<th>Depth</th>
+						<th>1Depth</th>
+						<th>2Depth</th>
+						<th>3Depth</th>
+						<th>4Depth</th>
+						<th>비고</th>
+						<th>작업완료</th>
+						<th>링크</th>
+					</tr>
+				</thead>
+				<tbody> 
+                    
+                    
+                    <!-- 공통 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">공통</td>
+						<td class="itemtit02">로딩</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="00_common/loading.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    
+                    <!-- 메인 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">메인</td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="01_main/index.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    
+                    <!-- 환경설정 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">환경설정</td>
+						<td class="itemtit02">마이페이지</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">비밀번호 변경, 겸직부서 설정 버튼 클릭시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">회사정보</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">각 버튼 클릭 시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting02.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">비용계정 설정</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">추가 버튼 클릭시 계정정보 모달 호출<br><br>관리항목, 사용부서 버튼 클릭 시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting03.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">임직원 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">테이블 상단 버튼 클릭시 모달 팝업 호출<br><br>직원등록 클릭시 컨텐츠 슬라이드</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting04.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">법인카드 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">사용자 이름 클릭 시 법인카드 사용자 등록 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting05.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">차량 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">차량등록 버튼 클릭 시 모달호출<br><br>차량번호 클릭 시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting06.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">예산 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">예산등록 버튼 클릭시 컨텐츠 슬라이드<br><br>엑셀업로드 버튼 클릭 시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting07.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">프로젝트 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">엑셀다운로드 버튼 클릭 시 모달 호출<br><br>프로젝트 등록 버튼 클릭 시 컨텐츠 슬라이드</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting08.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">거래처 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">테이블 상단 버튼 클릭 시 각 모달 호출<br><br>거래처명 클릭 시 거래처 수정 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting09.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">ERP 관리항목</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">추가버튼 클릭시 추가 모달 호출<br><br>페이지 링크 클릭 시 수정 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting10.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">업무추진비 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">테이블 상단 버튼 클릭 시 각 모달 호출<br><br>테이블 내 사용버튼 클릭 시 수정 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/setting11.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    
+                    <!-- 공지사항 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">공지사항</td>
+						<td class="itemtit02">서비스 공지사항</td>
+						<td class="itemtit03">목록</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">상세</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice02.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">사내 공지사항</td>
+						<td class="itemtit03">목록</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice03.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">쓰기</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice04.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">상세</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice05.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">PUSH</td>
+						<td class="itemtit03">목록</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice06.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">쓰기</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/notice07.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    
+                    <!-- 경비관리 -->
+					<tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">경비관리</td>
+						<td class="itemtit02">경비사용 현황</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">상단 검색 확장 버튼 클릭 시 검색영역 확장<br><br>엑셀다운로드, 일괄등록, 등록 버튼 클릭시 팝업호출<br><br>일괄등록 팝업 내 저장 버튼 클릭 시 일괄등록 컨텐츠 출력<br><br>테이블내 입력대기버튼 클릭시 각 각 컨텐츠 출력</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/expense01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">지출결의서 내역</td>
+						<td class="itemtit03">목록</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">테이블 상단 버튼 클릭시 각 각 팝업 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/expense02.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">상세</td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">발신부서 클릭 시 결제선 팝업 호출<br><br>테이블내 상세보기 클릭 시 각 각 컨텐츠 출력</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/expense03.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">해외승인 현황</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">사용처 클릭 시 팝업 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/expense04.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">결제취소 현황</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">승인취소 클릭 시 팝업 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/expense05.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    
+                    <!-- 프리미엄 서비스 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">프리미엄 서비스</td>
+						<td class="itemtit02">기업정보 조회</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">기업정보 조회</td>
+						<td class="itemtit03">일반현황</td>
+						<td class="itemtit04">기업개요</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium11.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">주요주주</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium12.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">경영진</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium13.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">재무재표</td>
+						<td class="itemtit04">주요 재무상태표</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium21.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">주요 손익계산서</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium22.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">신용등급</td>
+						<td class="itemtit04">Clip 신용등급</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium31.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">현금흐름등급</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium32.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">CRI 등급</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium33.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03">신용상태정보</td>
+						<td class="itemtit04">공공정보</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium41.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">채무불이행</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium42.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">단기연체</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium43.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">회생파산</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium44.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">행정처분</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium45.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">당좌거래정지</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium46.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02"></td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04">소송정보</td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium47.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">경정청구 무료컨설팅</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium05.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">경정청구 무료컨설팅</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium06.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">청구내역 확인</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">링크 클릭 시 청구내역 상세 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium07.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">기업정보 조회 미가입</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/premium08.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <!-- 예산 사용현황 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">예산 사용현황</td>
+						<td class="itemtit02">부서별 예산 사용현황</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/budget01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">프로젝트 경비 사용현황</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06"></td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/budget02.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+					
+					<!-- 회사차량 운행관리 -->
+                    <tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01">회사차량 운행관리</td>
+						<td class="itemtit02">운행기록부 관리</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">운행기록추가 버튼 클릭시 운행 정보 영역 확장<br>차량번호 중복확인 클릭시 차량 목록 모달 팝업<br>사용자 정보 중복확인 클릭시 임직원 목록 모달 팝업<br>운행 정보 출발지/도착지 주소 클릭시 주소 모달 팝업</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/car01.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+                    
+					<tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">운행기록부 작성</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">테이블 상단 버튼 클릭 시 각 모달 호출<br><br>테이블 단계 내 링크 클릭 시 모달 호출</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/car02.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+					
+					<tr onMouseDown="toggleed(this)">
+						<th></th>
+						<td class="itemtit01"></td>
+						<td class="itemtit02">자주가는 거래처</td>
+						<td class="itemtit03"></td>
+						<td class="itemtit04"></td>
+						<td class="itemtit05"></td>
+						<td class="itemtit06">추가 버튼 클릭시<br>자주가는 거래처 등록 모달 팝업</td>
+						<td class="txt_ok">OK</td>
+						<td><a href="02_pages/car03.html" target="_blank" class="btn_go">페이지 열기</a></td>
+                    </tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--// container e -->
+</div>
+</body>
+<script type="text/javascript">$(document).ready(function() {$('#focus').tableHover();});</script>
+<script type="text/javascript">
+	$(function(){
+		var total = $("#focus tbody tr th").length;
+		var ok = $("#focus .txt_ok").filter(function(){return $(this).text().length == 10;}).length;
+		var per = Math.round((ok * 100) / total);
+		$("#per").html(per + "%").css("color","red");
+
+		$.each($("td:last a","#focus tbody tr"), function(){
+			var fn = $(this).attr("href").split(".ht")[0].split("/")[3];
+
+			if(typeof fn != "undefined") $(this).parent().append("<span class='fn'>"+fn+"</span>");
+		});
+		$("title").text($("h1").text());
+	});
+
+
+	var st1 = new SortableTable(document.getElementById("focus"), ["Number" ,"String","String", "String", "String", "String"]);
+	$(function(){
+
+		var tds = $("#focus tbody  th:first-child");
+		for(var i=0; i < tds.length; i++) {
+			$(tds[i]).html(i+1);
+
+		}
+	});
+	$('#focus thead th').click(function(){
+		//alert("a");
+		var tds = $("#focus tbody  th:first-child");
+		for(var i=0; i < tds.length; i++) {
+			//alert(tds[i].firstChild.nodeValue);
+			$(tds[i]).html(i+1);
+		}
+	});
+</script>
+<script type="text/javascript">
+//<!--
+	function toggleed(trEle){
+	 //alert(trEle.parentElement.rows)
+	 var rows = trEle.parentElement.rows;
+
+	 for(i = 0; i < rows.length; i++){
+		if(rows[i] == trEle){
+		 trEle.style.backgroundColor = "#ffebeb"
+		}else{
+		 rows[i].style.backgroundColor = ""
+		}
+	 }
+	}
+//-->
+</script>
+<script type="text/javascript">
+	// popup
+	 function openPopup(url, winName, pwidth, pheight, scrollYN, resizeYN) {
+	 var win = null;
+
+	 var winL = (screen.width-pwidth)/2;
+	 var winT = (screen.height-pheight)/2;
+	 var spec = 'toolbar=no,';
+	 spec += 'status=no,';
+	 spec += 'location=yes,';
+	 spec += 'height='+pheight+',';
+	 spec += 'width='+pwidth+',';
+	 spec += 'top='+winT+',';
+	 spec += 'left='+winL+',';
+	 spec += 'scrollbars='+(scrollYN == undefined ? "yes" : scrollYN)+',';
+	 spec += 'resizable='+(resizeYN == undefined ? "no" : resizeYN);
+	 win = window.open(url, winName, spec);
+	 if(parseInt(navigator.appVersion) >= 4) {
+	  win.window.focus();
+	 }
+ }
+</script>
+</html>

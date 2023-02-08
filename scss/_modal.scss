@@ -1,0 +1,404 @@
+////////////////////     MODAL     ////////////////////
+
+#modal-wrap{
+	width: 100%;
+	height: 100vh;
+	background: rgba(#000,.5);
+	position: fixed;
+	z-index: 100;
+	left: 0;
+	top: 0;
+	display: none;
+	.alert-wrap{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		padding: 0 20px 70px 20px;
+		width: 280px;
+		background: $white;
+		box-shadow: 0 10px 20px -8px rgba(6, 16, 88, 0.5);
+		//border-radius: 20px;
+		.title{
+			margin-top: 30px;
+			text-align: center;
+			font-size: 16px;
+			font-weight: 700;
+			letter-spacing: -0.68px;
+		}
+		.text{
+			font-size: 14px;
+			color: $textColor;
+			margin-top: 20px;
+			text-align: center;
+			line-height: 1.6;
+		}
+		.modal-btn-wrap{
+			width: 100%;
+			border-radius: 0 0 20px 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 40px;
+			display: flex;
+			li{
+				width: 100%;
+				&.pri{
+					background: $second;
+					border-bottom-right-radius: 19px;
+				}
+				&.sec{
+					background: $textColor;
+					border-bottom-left-radius: 19px;
+				}
+				&.full{
+					background: $second;
+					border-bottom-right-radius: 19px;
+					border-bottom-left-radius: 19px;
+				}
+				button{
+					line-height: 40px;
+					text-align: center;
+					width: 100%;
+					color: $white;
+				}
+			}
+		}
+	}
+	.modal-con{
+		width: 500px;
+		&.w800{
+			width: 800px;
+		}
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		background: #fff;
+		padding: 30px;
+		padding-bottom: 50px;
+		border: solid 2px $textColor;
+		//display: none;
+		@include box-sizing(border-box);
+		.modal-close{
+			display: block;
+			width: 40px;
+			height: 40px;
+			position: absolute;
+			top: -1px;
+			right: 0;
+			background: url("../_images/common/icon-s-cross-w@2x.png") no-repeat center;
+			background-size: 24px;
+			background-color: $textColor;
+			text-indent: -9999px;
+		}
+		.bottom-con{
+			margin-top: 10px;
+			border: 1px solid #dedede;
+			padding: 10px;
+			font-size: 14px;
+			letter-spacing: -0.59px;
+			color: $textColor;
+			line-height: 1.5;
+			dt{
+				margin-bottom: 20px;
+			}
+			dd:not(:last-child){
+				margin-bottom: 20px;
+			}
+		}
+		.title{
+			margin-top: 22px;
+			font-size: 20px;
+			font-weight: 700;
+			letter-spacing: -0.85px;;
+			color: $black;
+			padding-bottom: 10px;
+			border-bottom: 2px solid $textColor;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            span{
+                font-weight: 400;
+                font-size: 14px;
+            }
+		}
+		.sub-title{
+			margin-top: 30px;
+			font-size: 16px;
+			font-weight: 700;
+			letter-spacing: -0.68px;
+			color: $black;
+		}
+		.box-sub-title{
+			margin-top: 30px;
+			border: 1px solid #dedede;
+			line-height: 1.6;
+			letter-spacing: -0.59px;
+			color: $textColor;
+			background-color: #f5f5f5;
+			padding: 10px;
+			//@include box-sizing(border-box);
+			strong{
+				color: $second;
+				font-weight: 700;
+			}
+		}
+		.box-select-radio{
+			width: 100%;
+			margin-top: 20px;
+			.box-item{
+				width: 100%;
+				align-items: center;
+				display: flex;
+				justify-content: space-between;
+				border-radius: 20px;
+				border: solid 1px #dedede;
+				padding: 20px;
+				line-height: 20px;
+				position: relative;
+				cursor: pointer;
+				p{
+					text-align: left;
+				}
+				&.marbottom:not(:last-child){
+					margin-bottom: 10px;
+				}
+				&.on{
+					border-color: $second;
+					color: $second;
+					&:after{
+						display: block;
+						width: 20px;
+						height: 20px;
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						right: 15px;
+						content: "";
+						background:url("../_images/common/radio@2x.png") no-repeat center / 20px;
+					}
+				}
+			}
+		}
+		.text{
+			font-size: 14px;
+			color: $textColor;
+			margin-top: 20px;
+			text-align: center;
+			line-height: 1.6;
+		}
+		.agree-wrap{
+			margin-top: 10px;
+			display: flex;
+			justify-content: space-between;
+			.agree-title{
+				font-size: 14px;
+				font-weight: 500;
+				letter-spacing: -0.59px;
+				color: $textColor;
+			}
+		}
+		.modal-btn-wrap{
+			width: 100%;
+			border-radius: 0 0 20px 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 40px;
+			display: flex;
+			li{
+				width: 100%;
+				&.pri{
+					background: $second;
+					border-bottom-right-radius: 19px;
+				}
+				&.sec{
+					background: $textColor;
+					border-bottom-left-radius: 19px;
+				}
+				&.full{
+					background: $second;
+					border-bottom-right-radius: 19px;
+					border-bottom-left-radius: 19px;
+				}
+				button{
+					line-height: 40px;
+					text-align: center;
+					width: 100%;
+					color: $white;
+				}
+			}
+		}
+	}
+	.modal-aco{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		background: #fff;
+		padding: 30px;
+		border: solid 4px $primary;
+		//display: none;
+		.btn-close{
+			display: block;
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 24px;
+			right: 25px;
+			background: url(../_images/common/icon-s-cross@2x.png) no-repeat center;
+			background-size: 20px;
+			text-indent: -9999px;
+		}
+		.acodion-wrap{
+			max-height: 600px;
+			overflow: auto;
+			margin-top: 36px;
+			border-top: solid 2px $primary;
+			.acodion{
+				border-bottom: solid 1px $lineColor;
+				width: 600px;
+				.btn-aco{
+					padding-left: 20px;
+					width: 100%;
+					position: relative;
+					font-size: 14px;
+					font-weight: 700;
+					color: $textColor;
+					line-height: 40px;
+					text-align: left;
+					&:after{
+						content: "";
+						top: 50%;
+						right: 0;
+						transform: translateY(-50%);
+						width: 40px;
+						height: 40px;
+						position: absolute;
+						background: url("../_images/common/icon-s-caret-down@2x.png")no-repeat center;
+						background-size: 20px;
+					} 
+				}
+				.aco-con{
+					padding: 10px 0 0 20px;
+					border-top: solid 1px $lineColor;
+					display: none;
+					.flex{
+						flex-wrap: wrap;
+						label{
+							width: calc(100% / 3);
+							margin: 0;
+							margin-bottom: 10px;
+						}
+					}
+				}
+				&.on{
+					.btn-aco{
+						&:after{
+							background-image: url("../_images/common/icon-s-caret-up@2x.png");
+						}
+					}
+				}
+			}
+		}
+		
+		.title{
+			font-size: 16px;
+			font-weight: 700;
+			letter-spacing: -0.68px;
+			color: $textColor;
+		}
+		.text{
+			font-size: 14px;
+			color: $textColor;
+			margin-top: 20px;
+			text-align: center;
+			line-height: 1.6;
+		}
+		.modal-btn-wrap{
+			width: 100%;
+			border-radius: 0 0 20px 20px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 40px;
+			display: flex;
+			li{
+				width: 100%;
+				&.pri{
+					background: $second;
+					border-bottom-right-radius: 19px;
+				}
+				&.sec{
+					background: $textColor;
+					border-bottom-left-radius: 19px;
+				}
+				&.full{
+					background: $second;
+					border-bottom-right-radius: 19px;
+					border-bottom-left-radius: 19px;
+				}
+				button{
+					line-height: 40px;
+					text-align: center;
+					width: 100%;
+					color: $white;
+				}
+			}
+		}
+	}
+    &.block{
+        display: block;
+    }
+}
+
+
+.modal-scroll{
+    max-height: 70vh;
+    overflow: auto;
+}
+
+.code-wrap{
+    margin-top: 20px;
+    border-top: 2px solid #454545;
+    .code-top{
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #454545;
+        button{
+            width: 57px;
+            height: 40px;
+            background: $primary;
+            color: #fff;
+            border-radius: 10px;
+        }
+    }
+    .code-body{
+        padding-top: 10px;
+        border-bottom: 1px solid $lineColor;
+		padding-bottom: 5px;
+        .item{
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 5px;
+            button{
+                width: 57px;
+                height: 40px;
+                border: 1px solid $second;
+                color: $second;
+                border-radius: 10px;
+            }
+        }
+    }
+}
+
+.dd-ui{
+    width: 40px;
+    height: 40px;
+    background: url("../_images/common/icon-s-menu@2x.png") no-repeat center;
+    background-size: 16px;
+    border: 1px solid #454545;
+    border-radius: 10px;
+}

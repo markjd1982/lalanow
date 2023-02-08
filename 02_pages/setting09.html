@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+<link href="../_css/jquery-ui.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../_js/jquery-ui.js"></script>
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>거래처 관리<p>비용사용 거래처를 등록합니다.</p></h2>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">검색</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+							<input type="text" style="width:150px" placeholder="placeholder">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+				<p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap"> 
+					<a href="#" class="file btn-modal"  data-target="exceldn-modal">엑셀 다운로드</a>
+					<a href="#" class="file btn-modal"  data-target="excelup-modal">엑셀 업로드</a>
+                    <a href="#" class="pri btn-modal" data-target="apply-modal">거래처 등록</a>
+                </div>
+            </div>
+            
+			<table class="mt10">
+                <colgroup>
+                    <col width="50px">
+                    <col width="600px">
+                    <col width="215px">
+                    <col width="215px">
+                </colgroup>
+                <tr class="table-group">
+                    <th>번호</th> 
+                    <th class="down item">거래처명</th>
+                    <th class="down item">사업자번호</th>
+                    <th class="down item">최종 수정일</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><a href="#" class="btn-modal" data-target="modify-modal">A공단</a></td>
+                    <td>123-45-67890</td>
+                    <td>2017-01-25</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="#" class="btn-modal" data-target="modify-modal">A공단</a></td>
+                    <td>123-45-67890</td>
+                    <td>2017-01-25</td>
+                </tr>
+				<tr>
+                    <td>1</td>
+                    <td><a href="#" class="btn-modal" data-target="modify-modal">A공단</a></td>
+                    <td>123-45-67890</td>
+                    <td>2017-01-25</td>
+                </tr>
+            </table>
+            
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+    
+    
+	<!-- 거래처 엑셀 다운로드 -->
+    <div id="modal-wrap" class="exceldn-modal">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">거래처 엑셀 다운로드</p>
+            <p class="box-sub-title">거래처를 엑셀 파일 형식으로 다운받을 수 있습니다.<br>원하는 ERP 양식 선택 후 다운받을 수 있습니다.</p>
+			
+            <table class="mt20 search-table">
+				<colgroup>
+					<col width="150px">
+					<col width="287px">
+				</colgroup>
+				<tr>
+				<th>최종 수정일</th>
+					<td class="flex">
+						<div class="date-wrap mr10">
+							<input type="text" placeholder="날짜 입력" id="datepicker1">
+						</div>
+						<div class="date-wrap">
+							<input type="text" placeholder="날짜 입력" id="datepicker3">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th>다운로드 양식</th>
+					<td>
+						<div class="select-wrap">
+							<select>
+								<option>더존 iU</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+			</table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+	
+    <!-- 거래처 엑셀 업로드 -->
+	<div id="modal-wrap" class="excelup-modal">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">거래처 엑셀 업로드</p>
+            <p class="box-sub-title">상위직급을 상단에 등록하시기 바랍니다.<br>다운받은 엑셀 시트에는 부서별/계정별 입력양식이 있습니다.<br>예산 등록이 필요한 항목에만 입력 후 업로드 해 주시기 바랍니다.</p>
+			
+            <div class="btn-top-wrap mt20"> 
+                <a href="#" class="file">엑셀양식 다운로드</a>
+            </div>
+            <div class="code-wrap mt10">
+                <div class="code-top">
+                    <input type="file">
+                </div>
+            </div>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+	
+    <!-- 거래처 등록 -->
+	<div id="modal-wrap" class="apply-modal">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">거래처 등록</p>
+            <p class="box-sub-title">경비사용 업체를 등록합니다.</p>
+			
+            <table class="mt20 search-table">
+				<colgroup>
+					<col width="150px">
+					<col width="287px">
+				</colgroup>
+				<tr>
+					<th>거래처명<strong>*</strong></th>
+					<td><input type="text" value="A전자"></td>
+				</tr>
+				<tr>
+					<th>사업자번호</th>
+					<td><input type="text" value="123-45-67890"></td>
+				</tr>
+				<tr>
+					<th>ERP코드</th>
+					<td><input type="text" value="B1344"></td>
+				</tr>
+			</table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+    
+    <!-- 거래처 수정 -->
+	<div id="modal-wrap" class="modify-modal">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">거래처 수정</p>
+            <p class="box-sub-title">경비사용 업체를 등록합니다.</p>
+			
+            <table class="mt20 search-table">
+				<colgroup>
+					<col width="150px">
+					<col width="287px">
+				</colgroup>
+				<tr>
+					<th>거래처명<strong>*</strong></th>
+					<td><input type="text" value="A전자"></td>
+				</tr>
+				<tr>
+					<th>사업자번호</th>
+					<td><input type="text" value="123-45-67890"></td>
+				</tr>
+				<tr>
+					<th>ERP코드</th>
+					<td><input type="text" value="B1344"></td>
+				</tr>
+				<tr>
+					<th>미사용거래처</th>
+					<td>
+						<input type="radio" id="radio1" name="radio">
+						<label for="radio1">네</label>
+						<input type="radio" id="radio2" name="radio" checked>
+						<label for="radio2">아니오</label>
+					</td>
+				</tr>
+			</table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="dis modalwidth btn-close">삭제</a>
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script>
+    
+$(function(){
+        
+    $( "#datepicker1,#datepicker2,#datepicker3,#datepicker4,#datepicker5,#datepicker6" ).datepicker({
+        inline: true,
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    });
+    
+});
+    
+</script>		
+
+</html>

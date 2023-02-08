@@ -1,0 +1,1460 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+<link href="../_css/jquery-ui.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="../_js/jquery-ui.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>경비사용 현황<p>임직원이 사용한 경비내역을 확인합니다.</p></h2>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="date-wrap">
+                                <input type="text" style="width: 215px;" placeholder="날짜 입력" id="datepicker1">
+                            </div>
+                            <em>~</em>
+                            <div class="date-wrap">
+                                <input type="text" style="width: 215px;" placeholder="날짜 입력" id="datepicker2">
+                            </div>
+                            <div class="month-btn-wrap">
+                                <button class="on">당월</button>
+                                <button>전월</button>
+                                <button>올해</button>
+                                <button>전년도</button>
+                            </div>
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <p class="label">상태</p>
+                                <div class="select-wrap" style="width:460px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">검색</p>
+                                <div class="select-wrap mr10" style="width:150px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="검색어 입력" style="width: 300px">
+                                
+                                <input type="checkbox" id="checkbox1" name="checkbox1" checked>
+                                <label class="ml20" for="checkbox1">법인카드</label>
+                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                <label for="checkbox2">개인카드</label>
+                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                <label for="checkbox3">현금</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap">
+                    <a href="#" class="file btn-modal"  data-target="excel-modal">엑셀 다운로드</a>
+                    <a href="#" class="sec btn-modal" data-target="reg-all-modal">일괄등록</a>
+                    <a href="#" class="pri btn-expand" data-target="idx4">등록</a>
+                </div>
+            </div>
+            
+            <!-- 경비등록 -->
+            <div id="expand-slide" class="gray mt10 idx4">
+                <div class="wrap">
+                                
+                    <h4>경비 내역</h4>
+                    <div class="con">
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">영수증 사진<strong>*</strong></p>
+                                <input type="file">
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">사용구분<strong>*</strong></p>
+                                <div class="rdx-wrap">
+                                    <input type="radio" id="radio1" name="radio">
+                                    <label for="radio1">현금</label>
+                                    <input type="radio" id="radio2" name="radio" checked>
+                                    <label for="radio2">개인카드</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">사용일시<strong>*</strong></p>
+                                <div class="flex">
+                                    <div class="date-wrap">
+                                        <input type="text" style="width: 231px;" placeholder="날짜 입력" id="datepicker4">
+                                    </div>
+                                    <input type="text" style="width: 231px;">
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">사용처<strong>*</strong></p>
+                                <input type="text">
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">사업자번호<strong>*</strong></p>
+                                <input type="text">
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">사용금액<strong>*</strong></p>
+                                <input type="text" class="price" value="152,000원">
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">부가세<strong>*</strong></p>
+                                <input type="text" class="price" value="13,818원">
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">공급가액</p>
+                                <input type="text" class="price" value="138,182원" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt30">사용자정보</h4>
+                    <div class="con">
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">사용자<strong>*</strong></p>
+                                <div class="flex">
+                                    <input type="text">
+                                    <button class="ml10">검색</button>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">부서</p>
+                                <input type="text" value="채널사업 1팀" disabled>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4 class="mt30">용도</h4>
+                    <div class="con">
+                        <div class="form-wrap">
+                            <p class="title">비용계정<strong>*</strong></p>
+                            <div class="flex left">
+                                <div class="select-wrap mr10" style="width:230px;">
+                                    <select>
+                                        <option>계정과목</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrap mr10" style="width:230px;">
+                                    <select>
+                                        <option>계정항목</option>
+                                    </select>
+                                </div>
+                                <div class="select-wrap" style="width:230px;">
+                                    <select>
+                                        <option>계정세부항목</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="mt10">외부 회사와 회의 진행을 위한 비용 집행 시 사용하는 계정</p>
+                        </div>
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">예산잔액</p>
+                                <input type="text" value="100,000원 – 152,000원 = -52,000원" disabled>
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">관리항목명</p>
+                                <div class="flex">
+                                    <input type="text" placeholder="시외출장 행정동을 입력하세요">
+                                    <button class="ml10">검색</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">프로젝트<strong>*</strong></p>
+                                <div class="flex">
+                                    <input type="text">
+                                    <button class="ml10">검색</button>
+                                </div>
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">추가사진<strong>*</strong></p>
+                                <input type="file">
+                                <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                            </div>
+                        </div>
+                        <div class="form-wrap">
+                            <p class="title">적요<strong>*</strong></p>
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <h4 class="mt30">지출결의 정보</h4>
+                    <div class="con">
+                        <div class="flex">
+                            <div class="form-wrap">
+                                <p class="title">문서번호</p>
+                                <input type="text" value="없음" disabled>
+                            </div>
+                            <div class="form-wrap">
+                                <p class="title">단계</p>
+                                <input type="text" value="지출결의 대기" disabled>
+                            </div>
+                        </div>
+                        <div class="form-wrap">
+                            <p class="title">경비규정<strong>*</strong></p>
+                            <input type="text" value="동일 가맹점 사용규정 위반 의심" disabled>
+                        </div>
+                    </div>
+
+                    <div class="btn-con-wrap"> 
+                        <a href="#" class="dis expand-close">취소</a>
+                        <a href="#" class="pri">저장</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 경비일괄등록 -->
+            <div id="expand-slide" class="gray idx5 mt10">
+                <div class="wrap">
+
+                    <div class="col2-flex">
+
+                        <div class="layout-left">
+                            <div class="board-top mt0">
+                                <h3>경비내역</h3>
+                                <div class="btn-top-wrap">
+                                    <a href="#" class="pri">항목수정</a>
+                                </div>
+                            </div>
+                            <table class="mt10">
+                                <colgroup>
+                                    <col width="50px">
+                                    <col width="120px">
+                                    <col width="100px">
+                                    <col width="130px">
+                                </colgroup>
+                                <tr>
+                                    <th>번호</th>
+                                    <th>사용일자</th>
+                                    <th>사용처</th>
+                                    <th>사용금액</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>00000</td>
+                                    <td>00000</td>
+                                    <td class="right">100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>00000</td>
+                                    <td>00000</td>
+                                    <td class="right">100,000</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>00000</td>
+                                    <td>00000</td>
+                                    <td class="right">100,000</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div class="layout-right">
+                            <div class="tab1-wrap">
+                                <ul>
+                                    <li class="on"><a href="#">주 사용자</a></li>
+                                    <li><a href="#">사용자 2</a><span class="btn-remove"></span></li>
+                                    <li class="btn-add"></li>
+                                </ul>
+                            </div>
+                            <h4 class="mt20">용도
+                                 <input type="checkbox" id="checkbox111" name="checkbox"><label class="ml20" for="checkbox111">개인용도 사용</label>
+                            </h4>
+                            <div class="con">
+                                <div class="form-wrap">
+                                    <p class="title">비용계정<strong>*</strong></p>
+                                    <div class="flex">
+                                        <div class="select-wrap" style="width:170px;">
+                                            <select>
+                                                <option>계정과목</option>
+                                            </select>
+                                        </div>
+                                        <div class="select-wrap" style="width:170px;">
+                                            <select>
+                                                <option>계정항목</option>
+                                            </select>
+                                        </div>
+                                        <div class="select-wrap" style="width:170px;">
+                                            <select>
+                                                <option>계정세부항목</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <p class="mt10">외부 회사와 회의 진행을 위한 비용 집행 시 사용하는 계정</p>
+                                </div>
+                                <div class="form-wrap">
+                                    <p class="title">예산잔액</p>
+                                    <input type="text" value="1,152,000원 – 152,000원 = 1,000,000원" disabled>
+                                </div>
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">접대회사명<strong>*</strong></p>
+                                        <div class="flex">
+                                            <input type="text">
+                                            <button class="ml10">검색</button>
+                                        </div>
+                                        <p class="mt10">부정청탁 방지대상 확인중</p>
+                                        <p class="mt10 red">부정청탁 방지대상</p>
+                                        <p class="mt10 blue">부정청탁 대상아님</p>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">접대인원수<strong>*</strong></p>
+                                        <div class="select-wrap">
+                                            <select>
+                                                <option>1</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">접대상대방 성명<strong>*</strong></p>
+                                        <input type="text">
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">관리항목명<strong>*</strong></p>
+                                        <div class="flex">
+                                            <input type="text" placeholder="시외출장 행정동을 입력">
+                                            <button class="ml10">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">프로젝트<strong>*</strong></p>
+                                        <div class="flex">
+                                            <input type="text">
+                                            <button class="ml10">검색</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <p class="title">추가사진<strong>*</strong></p>
+                                    <input type="file">
+                                    <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                    <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                </div>
+                                <div class="form-wrap">
+                                    <p class="title">적요<strong>*</strong></p>
+                                    <input type="text">
+                                </div>
+                            </div>
+
+                             <h4 class="mt20">사용자정보</h4>
+                            <div class="con">
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">사용자<strong>*</strong></p>
+                                        <div class="flex">
+                                            <input type="text">
+                                            <button class="ml10">검색</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">부서</p>
+                                        <input type="text" disabled>
+                                    </div>
+                                </div>
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">사용금액<strong>*</strong></p>
+                                        <input type="text" value="760원" class="price" disabled>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">부가세<strong>*</strong></p>
+                                        <input type="text" value="760원" class="price">
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <p class="title">공급가액<strong>*</strong></p>
+                                    <input type="text" class="price" value="7,600원">
+                                </div>
+                            </div>
+                            
+                            <h4 class="mt20">지출결의 정보</h4>
+                            <div class="con">
+                                <div class="flex">
+                                    <div class="form-wrap">
+                                        <p class="title">문서번호</p>
+                                        <input type="text" disabled>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">단계</p>
+                                        <input type="text" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-wrap">
+                                    <p class="title">경비규정</p>
+                                    <input type="text" disabled>
+                                </div>
+                            </div>
+                            <p class="total">사용금액 합계 : <strong>7,600원</strong></p>
+                        </div>
+
+                    </div>
+
+                    <div class="btn-con-wrap"> 
+                        <a href="#" class="dis expand-close">취소</a>
+                        <a href="#" class="pri">저장</a>
+                    </div>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+                    <col width="50px">
+                    <col width="150px">
+                    <col width="80px">
+                    <col width="100px">
+                    <col width="150px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="150px">
+                    <col width="100px">
+                </colgroup>
+                <tr class="table-group">
+                    <th>번호</th> 
+                    <th class="down item">사용일자</th>
+                    <th class="down item">사용시간</th>
+                    <th class="down item">결제유형</th>
+                    <th class="down item">사용처</th>
+                    <th class="down item">부서명</th>
+                    <th class="down item">사용자</th>
+                    <th class="down item">사용금액</th>
+                    <th class="down item">계정과목</th>
+                    <th class="down item">단계</th>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>롯데-0499</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td><button class="btn btn-expand" data-target="idx1">입력대기</button></td>
+                </tr>
+                <tr>
+                    <td colspan="10" class="expand">
+                        <div id="expand-slide" class="gray idx1">
+                            <div class="wrap">
+                                
+                                <div class="col2-flex">
+                                    
+                                    <div class="layout-left">
+                                        <h3>법인카드 영수증</h3>
+                                        <div class="box">
+                                            <h4>결제정보</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>카드번호</li>
+                                                    <li>롯데 1234-****-****-1234</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사용금액</li>
+                                                    <li>30,800원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>원승인금액</li>
+                                                    <li>50,800원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>부분취소금액</li>
+                                                    <li>20,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>결제상태</li>
+                                                    <li>승인</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사용일시</li>
+                                                    <li>2019-07-10(수) 15:32</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>결제통화</li>
+                                                    <li>USD</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>현지금액</li>
+                                                    <li>11.32</li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="mt30">가맹점정보</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>사용처</li>
+                                                    <li>지에스리테일(GS25여의성우점)</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>업종</li>
+                                                    <li>편의점</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사업자번호</li>
+                                                    <li>123-45-67890</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>과세유형</li>
+                                                    <li>일반과세자</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>전화번호</li>
+                                                    <li>02-312-1234</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>원 사업자번호</li>
+                                                    <li>123-45-12345</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>원 가맹점명</li>
+                                                    <li>쿠팡</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>주소</li>
+                                                    <li>서울 서대문구 충정로3가 58-1 2호</li>
+                                                </ul>
+                                            </div>
+                                            <p class="total">7,600원</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="layout-right">
+                                        <div class="tab1-wrap">
+                                            <ul>
+                                                <li class="on"><a href="#">주 사용자</a></li>
+                                                <li><a href="#">사용자 2</a><span class="btn-remove"></span></li>
+                                                <li class="btn-add"></li>
+                                            </ul>
+                                        </div>
+                                        <h4 class="mt20">용도
+                                             <input type="checkbox" id="checkbox111" name="checkbox"><label class="ml20" for="checkbox111">개인용도 사용</label>
+                                        </h4>
+                                        <div class="con">
+                                            <div class="form-wrap">
+                                                <p class="title">비용계정<strong>*</strong></p>
+                                                <div class="flex">
+                                                    <div class="select-wrap" style="width:170px;">
+                                                        <select>
+                                                            <option>계정과목</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="select-wrap" style="width:170px;">
+                                                        <select>
+                                                            <option>계정항목</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="select-wrap" style="width:170px;">
+                                                        <select>
+                                                            <option>계정세부항목</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <p class="mt10">외부 회사와 회의 진행을 위한 비용 집행 시 사용하는 계정</p>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">예산잔액</p>
+                                                <input type="text" value="1,152,000원 – 152,000원 = 1,000,000원" disabled>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">접대회사명<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                    <p class="mt10">부정청탁 방지대상 확인중</p>
+                                                    <p class="mt10 red">부정청탁 방지대상</p>
+                                                    <p class="mt10 blue">부정청탁 대상아님</p>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">접대인원수<strong>*</strong></p>
+                                                    <div class="select-wrap">
+                                                        <select>
+                                                            <option>1</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">접대상대방 성명<strong>*</strong></p>
+                                                    <input type="text">
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">관리항목명<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text" placeholder="시외출장 행정동을 입력">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">프로젝트<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">추가사진<strong>*</strong></p>
+                                                <input type="file">
+                                                <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                                <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">적요<strong>*</strong></p>
+                                                <input type="text">
+                                            </div>
+                                        </div>
+                                        
+                                         <h4 class="mt20">사용자정보</h4>
+                                        <div class="con">
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">사용자<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">부서</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">사용금액<strong>*</strong></p>
+                                                    <input type="text" value="760원" class="price" disabled>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">부가세<strong>*</strong></p>
+                                                    <input type="text" value="760원" class="price">
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">공급가액<strong>*</strong></p>
+                                                    <input type="text" class="price" value="7,600원">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <p class="total">사용금액 합계 : <strong>7,600원</strong></p>
+                                        
+                                        <h4 class="mt20">지출결의 정보</h4>
+                                        <div class="con">
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">문서번호</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">단계</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">경비규정</p>
+                                                <input type="text" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="btn-con-wrap"> 
+                                    <a href="#" class="dis expand-close">취소</a>
+                                    <a href="#" class="pri">저장</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>개인카드</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td><button class="btn btn-expand" data-target="idx2">입력대기</button></td>
+                </tr>
+                <tr>
+                    <td colspan="10" class="expand">
+                        <div id="expand-slide" class="gray idx2">
+                            <div class="wrap">
+                                
+                                <h4>경비 내역</h4>
+                                <div class="con">
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">영수증 사진<strong>*</strong></p>
+                                            <input type="file">
+                                            <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                            <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">사용구분<strong>*</strong></p>
+                                            <div class="rdx-wrap">
+                                                <input type="radio" id="radio13" name="radio22">
+                                                <label for="radio13">현금</label>
+                                                <input type="radio" id="radio23" name="radio22" checked>
+                                                <label for="radio23">개인카드</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">사용일시<strong>*</strong></p>
+                                            <div class="flex">
+                                                <div class="date-wrap">
+                                                    <input type="text" style="width: 231px;" placeholder="날짜 입력" id="datepicker3">
+                                                </div>
+                                                <input type="text" style="width: 231px;">
+                                            </div>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">사용처<strong>*</strong></p>
+                                            <input type="text">
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">사업자번호<strong>*</strong></p>
+                                            <input type="text">
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">사용금액<strong>*</strong></p>
+                                            <input type="text" class="price" value="152,000원">
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">부가세<strong>*</strong></p>
+                                            <input type="text" class="price" value="13,818원">
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">공급가액</p>
+                                            <input type="text" class="price" value="138,182원" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="mt30">사용자정보</h4>
+                                <div class="con">
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">사용자<strong>*</strong></p>
+                                            <div class="flex">
+                                                <input type="text">
+                                                <button class="ml10">검색</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">부서</p>
+                                            <input type="text" value="채널사업 1팀" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <h4 class="mt30">용도</h4>
+                                <div class="con">
+                                    <div class="form-wrap">
+                                        <p class="title">비용계정<strong>*</strong></p>
+                                        <div class="flex left">
+                                            <div class="select-wrap mr10" style="width:230px;">
+                                                <select>
+                                                    <option>계정과목</option>
+                                                </select>
+                                            </div>
+                                            <div class="select-wrap mr10" style="width:230px;">
+                                                <select>
+                                                    <option>계정항목</option>
+                                                </select>
+                                            </div>
+                                            <div class="select-wrap" style="width:230px;">
+                                                <select>
+                                                    <option>계정세부항목</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <p class="mt10">외부 회사와 회의 진행을 위한 비용 집행 시 사용하는 계정</p>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">예산잔액</p>
+                                            <input type="text" value="100,000원 – 152,000원 = -52,000원" disabled>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">관리항목명</p>
+                                            <div class="flex">
+                                                <input type="text" placeholder="시외출장 행정동을 입력하세요">
+                                                <button class="ml10">검색</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">프로젝트<strong>*</strong></p>
+                                            <div class="flex">
+                                                <input type="text">
+                                                <button class="ml10">검색</button>
+                                            </div>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">추가사진<strong>*</strong></p>
+                                            <input type="file">
+                                            <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                            <p class="pic-item mt10"><span class="btn-del"></span>asdfghjkl.jpg</p>
+                                        </div>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">적요<strong>*</strong></p>
+                                        <input type="text">
+                                    </div>
+                                </div>
+                                
+                                <h4 class="mt30">지출결의 정보</h4>
+                                <div class="con">
+                                    <div class="flex">
+                                        <div class="form-wrap">
+                                            <p class="title">문서번호</p>
+                                            <input type="text" value="없음" disabled>
+                                        </div>
+                                        <div class="form-wrap">
+                                            <p class="title">단계</p>
+                                            <input type="text" value="지출결의 대기" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="form-wrap">
+                                        <p class="title">경비규정<strong>*</strong></p>
+                                        <input type="text" value="동일 가맹점 사용규정 위반 의심" disabled>
+                                    </div>
+                                </div>
+                                
+                                <div class="btn-con-wrap"> 
+                                    <a href="#" class="dis expand-close">취소</a>
+                                    <a href="#" class="pri">저장</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td><button class="btn btn-expand" data-target="idx3">입력대기</button></td>
+                </tr>
+                <tr>
+                    <td colspan="10" class="expand">
+                        <div id="expand-slide" class="gray idx3">
+                            <div class="wrap">
+                                
+                                <div class="col2-flex">
+                                    
+                                    <div class="layout-left">
+                                        <h3>매입전자세금계산서</h3>
+                                        <div class="box blue">
+                                            <h4>공급자 정보</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>등록번호</li>
+                                                    <li>123-12-12345</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>상호</li>
+                                                    <li>컬러인쇄사</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>성명</li>
+                                                    <li>가나다</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>사업장주소</li>
+                                                    <li>서울시 서대문구 충정로 36</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>담당자이메일</li>
+                                                    <li>kangho@nibbb.co.kr</li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="mt30">매입내역</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>작성일</li>
+                                                    <li>2021-02-01(월)</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>발급일</li>
+                                                    <li>2021-02-02(월)</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>공급가액</li>
+                                                    <li>50,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>세액</li>
+                                                    <li>5,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>합계금액</li>
+                                                    <li>55,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>분류</li>
+                                                    <li>세금계산서</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>종류</li>
+                                                    <li>일반</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>승인번호</li>
+                                                    <li>20210301-41000007-23723506</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>비고</li>
+                                                    <li></li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="mt30">대표 품목</h4>
+                                            <div class="list-between-wrap">
+                                                <ul>
+                                                    <li>공급일</li>
+                                                    <li>02-01</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>품목</li>
+                                                    <li>컬러인쇄</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>수량</li>
+                                                    <li>10</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>단가</li>
+                                                    <li>5,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>공급가액</li>
+                                                    <li>50,000원</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>세액</li>
+                                                    <li>5,000원</li>
+                                                </ul>
+                                            </div>
+                                            <a href="#" class="all btn-modal" data-target="reg-list-modal">대표품목 전체보기</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="layout-right">
+                                        <div class="tab1-wrap">
+                                            <ul>
+                                                <li class="on"><a href="#">주 사용자</a></li>
+                                                <li><a href="#">사용자 2</a><span class="btn-remove"></span></li>
+                                                <li class="btn-add"></li>
+                                            </ul>
+                                        </div>
+                                        <h4 class="mt20">용도</h4>
+                                        <div class="con">
+                                            <div class="form-wrap">
+                                                <p class="title">비용계정<strong>*</strong></p>
+                                                <div class="flex left">
+                                                    <div class="select-wrap mr10" style="width:170px;">
+                                                        <select>
+                                                            <option>실사진행비</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="select-wrap" style="width:170px;">
+                                                        <select>
+                                                            <option>조사인쇄비</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">관리항목명<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">그룹웨어품의 문서번호</p>
+                                                    <input type="text">
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">프로젝트<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">적요<strong>*</strong></p>
+                                                <input type="text">
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">추가사진<strong>*</strong></p>
+                                                <input type="file">
+                                            </div>
+                                        </div>
+                                        
+                                         <h4 class="mt20">사용자정보</h4>
+                                        <div class="con">
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">사용자<strong>*</strong></p>
+                                                    <div class="flex">
+                                                        <input type="text">
+                                                        <button class="ml10">검색</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">부서</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">사용금액<strong>*</strong></p>
+                                                    <input type="text" value="760원" class="price" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <h4 class="mt20">지출결의 정보</h4>
+                                        <div class="con">
+                                            <div class="flex">
+                                                <div class="form-wrap">
+                                                    <p class="title">문서번호 <strong>*</strong></p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                                <div class="form-wrap">
+                                                    <p class="title">단계</p>
+                                                    <input type="text" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="form-wrap">
+                                                <p class="title">경비규정<strong>*</strong></p>
+                                                <input type="text" value="동일 가맹점 사용규정 위반 의심" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="btn-con-wrap"> 
+                                    <a href="#" class="dis expand-close">취소</a>
+                                    <a href="#" class="pri">저장</a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+				<tr>
+                    <td>7</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>6</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>5</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>4</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>3</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>2</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+				<tr>
+                    <td>1</td>
+                    <td>2022-08-19 (금)</td>
+                    <td>19:18</td>
+                    <td>세금계산서</td>
+                    <td>투썸플레이스㈜</td>
+                    <td>채널지원팀</td>
+                    <td>김동철</td> 
+                    <td class="right">282,600</td>
+                    <td>일반복리후생비</td>
+                    <td></td>
+                </tr>
+            </table>
+            
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+    
+    <!-- 엑셀 다운로드 -->
+    <div id="modal-wrap" class="excel-modal">
+		<div class="modal-con w500">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 엑셀 다운로드</p>
+
+			<table class="mt20 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>현재 비밀번호</th>
+                    <td class="flex">
+                        <div class="date-wrap mr10" style="width: 130px;">
+                            <input type="text" placeholder="날짜 입력" id="datepicker5">
+                        </div>
+                        <div class="date-wrap" style="width: 130px;">
+                            <input type="text" placeholder="날짜 입력" id="datepicker6">
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+    
+    
+    <!-- 경비일괄등록 -->
+    <div id="modal-wrap" class="reg-all-modal">
+		<div class="modal-con" style="width: 1080px">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 등록</p>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <p class="label ml20">검색</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width:150px;">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+            </div>
+
+			<table class="mt20">
+                <colgroup>
+                    <col width="50px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="246px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                </colgroup>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="checkbox201" name="checkbox201">
+                        <label for="checkbox201"></label>
+                    </th>
+                    <th>사용일자</th>
+                    <th>결제유형</th>
+                    <th>사용처</th>
+                    <th>사용금액</th>
+                    <th>부서명</th>
+                    <th>사용자</th>
+                    <th>단계</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox202" name="checkbox202">
+                        <label for="checkbox202"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox203" name="checkbox203">
+                        <label for="checkbox203"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox204" name="checkbox204">
+                        <label for="checkbox204"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox205" name="checkbox205">
+                        <label for="checkbox205"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" id="checkbox206" name="checkbox206">
+                        <label for="checkbox206"></label></td>
+                    <td>2017-01-25(목)</td>
+                    <td>삼성-7841</td>
+                    <td>산타나</td>
+                    <td class="right">152,000</td>
+                    <td>사업팀</td>
+                    <td>홍길동</td>
+                    <td>입력 대기</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close btn-expand" data-target="idx5">저장</a>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 경비내역등록 -->
+    <div id="modal-wrap" class="reg-list-modal">
+		<div class="modal-con" style="width: 1080px">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">경비내역 등록</p>
+            
+            
+			<table class="mt20">
+                <colgroup>
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="100px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="120px">
+                    <col width="196px">
+                </colgroup>
+                <tr>
+                    <th>날짜</th>
+                    <th>품목</th>
+                    <th>규격</th>
+                    <th>수량</th>
+                    <th>단가</th>
+                    <th>공급가액</th>
+                    <th>세액</th>
+                    <th>비고</th>
+                </tr>
+                <tr>
+                    <td>02-01</td>
+                    <td>컬러인쇄</td>
+                    <td>A1</td>
+                    <td>10</td>
+                    <td class="right">152,000</td>
+                    <td class="right">152,000</td>
+                    <td class="right">152,000</td>
+                    <td>입력 대기</td>
+                </tr>
+				<tr>
+                    <td>02-01</td>
+                    <td>컬러인쇄</td>
+                    <td>A1</td>
+                    <td>10</td>
+                    <td class="right">152,000</td>
+                    <td class="right">152,000</td>
+                    <td class="right">152,000</td>
+                    <td>입력 대기</td>
+                </tr>
+            </table>
+            
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close btn-expand" data-target="idx5">저장</a>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+<script>
+    
+$(function(){
+        
+    $( "#datepicker1,#datepicker2,#datepicker3,#datepicker4,#datepicker5,#datepicker6" ).datepicker({
+        inline: true,
+		dayNamesMin:['일','월','화','수','목','금','토'],
+		monthNames:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+    });
+    
+});
+    
+</script>
+
+</html>

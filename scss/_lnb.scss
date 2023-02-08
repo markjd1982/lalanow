@@ -1,0 +1,187 @@
+////////////////////     LNB     ////////////////////
+
+
+#lnb{
+	position: sticky;
+	top: 0;
+	width: 320px;
+	height: 100vh;
+	background-color: $primary;
+	.top{
+		height: 123px;
+		padding-top: 50px;
+		padding-bottom: 40px;
+		display: flex;
+		justify-content: center;
+		.lalanow_logo{
+			width: 186px;
+			height: 32px;
+			background: url("../_images/common/lala_now.png") no-repeat center;
+			background-size: 186px;
+			a{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+	.menu-wrap{
+		width: 270px;
+		margin: 0 25px;
+		background-color: rgba(#ffffff, 0.05);
+		padding: 15px;
+		ul{
+			li{
+				margin-bottom: 10px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				height: 50px;
+				a{
+					display: block;
+					line-height: 50px;
+					padding-left: 48px;
+					font-size: 16px;
+					font-weight: 400;
+					letter-spacing: -0.05em;
+					color: #D4D5D9;
+					background: url("../_images/common/shop.png")no-repeat 20px 50% / 18px;
+					&.icon2{
+						background-image: url("../_images/common/user-octagon.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/user-octagon_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon3{
+						background-image: url("../_images/common/shop.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/shop_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon4{
+						background-image: url("../_images/common/3d-cube-scan.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/3d-cube-scan_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon5{
+						background-image: url("../_images/common/grid-6.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/grid-6_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon6{
+						background-image: url("../_images/common/user-search.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/user-search_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon7{
+						background-image: url("../_images/common/note.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/note_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+					&.icon8{
+						background-image: url("../_images/common/setting-2.png");
+						&.on{
+							color: #ffffff;
+							background-image: url("../_images/common/setting-2_w.png");
+							background-color: #FF820D;
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+		}
+		
+		
+	}
+	.menu{
+		width: 250px;
+		height: calc(100vh - 200px);
+		border-radius: 0 50px 30px 40px;
+		padding: 30px;
+		>ul{
+			>li{
+				margin-bottom: 20px;
+				>a{
+					display: block;
+					font-size: 16px;
+					color: #dedede;
+					padding-left: 30px;
+					background: url("../_images/common/plus@2x.png")no-repeat left center;
+					background-size: 20px;
+					line-height: 20px;
+					text-decoration: none;
+					&.on{
+						background: url("../_images/common/minus@2x.png")no-repeat left center / 20px;
+						color: $white;
+						font-weight: 700;
+					}
+				}
+				ul{
+					padding: 10px 0 0 40px;
+					display: none;
+					li{
+						margin: 0;
+						a{
+							font-size: 14px;
+							background: none;
+							line-height: 30px;
+							padding: 0;
+							color: #dedede;
+							font-weight: 400;
+							text-decoration: none;
+							&.on{
+								color: $white;
+								font-weight: 700;
+							}
+
+						}
+					}
+				}
+			}
+		}
+	}
+	.bg{
+		position: absolute;
+		top: 0;
+		right: 0;
+		border-radius: 0 50px 30px 40px;
+		content: "";
+		display: block;
+		width: 50vw;
+		background-color: #000000;
+		height: calc(100vh - 200px);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

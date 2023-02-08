@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>프로젝트 경비 사용현황<p>프로젝트별 예산 편성 대비 집행률을 확인합니다.</p></h2>
+            
+            <div class="top-search-wrap">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">기간</p>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                            <span>~</span>
+                            <div class="select-wrap ml10 mr10" style="width:80px;">
+                                <select>
+                                    <option>2018</option>
+                                </select>
+                            </div>
+                            <div class="select-wrap mr10" style="width:80px;">
+                                <select>
+                                    <option>01</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="expand-wrap">
+                            <div class="item">
+                                <p class="label">상태</p>
+                                <div class="select-wrap" style="width:300px;">
+                                    <select>
+                                        <option>전체</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <p class="label">프로젝트</p>
+                                <input type="text" placeholder="검색어 입력" style="width: 300px">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap">
+                    <a href="#" class="file">엑셀 다운로드</a>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="50px">
+                    <col width="380px">
+                    <col width="150px">
+                    <col width="150px">
+                    <col width="150px">
+                    <col width="150px">
+                    <col width="50px">
+                </colgroup>
+                <tr class="table-group">
+                    <th rowspan="2">번호</th>
+					<th rowspan="2">프로젝트 명</th>
+					<th colspan="4">비용 계정항목 적용 현황</th>
+					<th rowspan="2"></th>
+                </tr>
+				<tr>
+					<th>예산</th>
+					<th>사용금액</th>
+					<th>잔액</th>
+					<th>예산대비 사용률</th>
+				</tr>
+                <tr class="green">
+					<td colspan="2">합계</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td class="left">복리후생비</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td class="left">복리후생비</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td class="left">복리후생비</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td><button class="btn-plus"></button></td>
+				</tr>
+                <tr>
+					<td colspan="7" class="expand">
+                        <div id="expand-slide" class="gray">
+                            <table>
+                            <colgroup>
+                                <col width="50px">
+                                <col width="380px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="50px">
+                            </colgroup>
+                            <tr>
+                                <td></td>
+                                <td class="left">업무추진비</td>
+                                <td class="right">26,123,000</td>
+                                <td class="right">17,400,000</td>
+                                <td class="right">8,723,000</td>
+                                <td>67%</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="left">접대비</td>
+                                <td class="right">26,123,000</td>
+                                <td class="right">17,400,000</td>
+                                <td class="right">8,723,000</td>
+                                <td>67%</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td class="left">복리후생비</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td class="left">복리후생비</td>
+					<td class="right">26,123,000</td>
+					<td class="right">17,400,000</td>
+					<td class="right">8,723,000</td>
+					<td>67%</td>
+					<td><button class="btn-plus"></button></td>
+				</tr>
+                <tr>
+					<td colspan="7" class="expand">
+                        <div id="expand-slide" class="gray">
+                            <table>
+                            <colgroup>
+                                <col width="50px">
+                                <col width="380px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="150px">
+                                <col width="50px">
+                            </colgroup>
+                            <tr>
+                                <td></td>
+                                <td class="left">업무추진비</td>
+                                <td class="right">26,123,000</td>
+                                <td class="right">17,400,000</td>
+                                <td class="right">8,723,000</td>
+                                <td>67%</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="left">접대비</td>
+                                <td class="right">26,123,000</td>
+                                <td class="right">17,400,000</td>
+                                <td class="right">8,723,000</td>
+                                <td>67%</td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        </div>
+                    </td>
+				</tr>
+            </table>
+			
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+	
+	
+</body>
+	
+
+</html>

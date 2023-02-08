@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>법인카드 관리<p>회사 내에서 사용중인 법인카드 목록입니다. 서비스 제휴카드는 자동등록 됩니다.</p></h2>
+            
+            <div class="top-search-wrap single-con">
+                <div class="wrap">
+                    <div>
+                        <div class="item first">
+                            <p class="label">카드정보</p>
+                            <div class="select-wrap mr10" style="width:150px;">
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="검색어 입력" style="width: 150px;">
+                        </div>
+                    </div>
+                    <button class="expand"></button>
+                </div>
+                <button class="search"></button>
+            </div>
+            
+            <div class="board-top">
+                <p class="total-num">총 : 10건</p>
+                <div class="btn-top-wrap"> 
+					<a href="#" class="file">엑셀다운로드</a>
+                    <a href="#" class="pri">사용자 등록해제</a>
+                </div>
+            </div>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="50px">
+                    <col width="80px">
+                    <col width="150px">
+                    <col width="80px">
+                    <col width="80px">
+                    <col width="100px">
+                    <col width="100px">
+                    <col width="80px">
+                    <col width="140px">
+                    <col width="100px">
+                    <col width="120px">
+                </colgroup>
+                <tr class="table-group">
+					<th>
+						<input type="checkbox" id="checkbox201" name="checkbox201">
+						<label for="checkbox201"></label>
+					</th>
+                    <th class="down item">카드사</th> 
+                    <th class="down item">카드번호</th>
+                    <th class="down item">회원명</th>
+                    <th class="down item">사용자</th>
+                    <th class="down item">카드명</th>
+                    <th class="down item">기명식</th>
+                    <th class="down item">제휴카드</th>
+                    <th class="down item">마지막 사용 일시</th>
+                    <th class="down item">등록일</th>
+                    <th class="down item">사용여부</th>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox202" name="checkbox202">
+						<label for="checkbox202"></label>
+					</td>
+                    <td>삼성</td>
+                    <td>9710-****-****-7841</td>
+                    <td>홍길동</td>
+                    <td><a href="#" class="btn-modal" data-target="cid1">홍길동</a></td>
+                    <td><input type="text"></td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>기명</option>
+							</select>
+						</div>
+					</td>
+                    <td>제휴</td>
+                    <td>2017-10-12  13:00</td>
+                    <td>2017-01-25</td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>사용</option>
+							</select>
+						</div>
+					</td>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox203" name="checkbox203">
+						<label for="checkbox203"></label>
+					</td>
+                    <td>삼성</td>
+                    <td>9710-****-****-7841</td>
+                    <td>홍길동</td>
+                    <td><a href="#" class="btn-modal" data-target="cid1">홍길동</a></td>
+                    <td><input type="text"></td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>기명</option>
+							</select>
+						</div>
+					</td>
+                    <td>제휴</td>
+                    <td>2017-10-12  13:00</td>
+                    <td>2017-01-25</td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>사용</option>
+							</select>
+						</div>
+					</td>
+                </tr>
+                <tr>
+					<td>
+						<input type="checkbox" id="checkbox204" name="checkbox204">
+						<label for="checkbox204"></label>
+					</td>
+					<td>삼성</td>
+                    <td>9710-****-****-7841</td>
+                    <td>홍길동</td>
+                    <td><a href="#" class="btn-modal" data-target="cid1">홍길동</a></td>
+                    <td><input type="text"></td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>기명</option>
+							</select>
+						</div>
+					</td>
+                    <td>제휴</td>
+                    <td>2017-10-12  13:00</td>
+                    <td>2017-01-25</td>
+                    <td>
+						<div class="select-wrap">
+							<select>
+								<option>사용</option>
+							</select>
+						</div>
+					</td>
+                </tr>
+            </table>
+            <div id="paging">
+				<a href="#" class="ll">처음 목록</a>
+				<a href="#" class="l">이전 목록</a>
+				<div class="wrap">
+					<a href="#" class="on">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
+				</div>
+				<a href="#" class="r">다음 목록</a>
+				<a href="#" class="rr">마지막 목록</a>
+			</div>
+		</div>
+	</div>
+	
+    
+    <!-- 법인카드-사용자 등록  -->
+	<div id="modal-wrap" class="cid1">
+		<div class="modal-con" style="width: 500px;">
+			<button class="modal-close btn-close">닫기</button>
+            
+            <p class="title">법인카드-사용자 등록</p>
+			<h4>임직원 정보</h4>
+			<table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>이름</th>
+                    <td class="flex"><input type="text" value="이강호"><button class="ml10">검색</button></td>
+                </tr>
+                <tr>
+                    <th>부서</th>
+                    <td><input type="text" value="인터넷 사업팀" disabled></td>
+                </tr>
+                <tr>
+                    <th>직급</th>
+                    <td><input type="text" value="대리" disabled></td>
+                </tr>
+                <tr>
+                    <th>연락처</th>
+                    <td><input type="text" value="010-1234-1234" disabled></td>
+                </tr>
+                <tr>
+                    <th>권한</th>
+                    <td><input type="text" value="임직원" disabled></td>
+                </tr>
+            </table>
+			<h4>법인카드 정보</h4>
+            <table class="mt10 search-table">
+                <colgroup>
+                    <col width="150px">
+                    <col width="287px">
+                </colgroup>
+                <tr>
+                    <th>연결 카드사</th>
+                    <td class="flex"><input type="text" value="삼성카드" disabled></td>
+                </tr>
+                <tr>
+                    <th>부서</th>
+                    <td class="flex">
+						<input type="text" value="1111" disabled class="mr10" style="text-align: center">
+						<input type="text" value="****" disabled class="mr10" style="text-align: center">
+						<input type="text" value="****" disabled class="mr10" style="text-align: center">
+						<input type="text" value="1111" disabled style="text-align: center">
+					</td>
+                </tr>
+            </table>
+			<div class="btn-btm-wrap mt20">
+				<a href="#" class="pri modalwidth btn-close">저장</a>
+			</div>
+		</div>
+	</div>
+</body>
+	
+
+</html>

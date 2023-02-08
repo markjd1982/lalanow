@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="format-detection" content="telephone=no">
+<title>오토빌</title>
+
+<link href="../_css/reset.css" rel="stylesheet" type="text/css">
+<link href="../_css/style.css" rel="stylesheet" type="text/css">
+    
+<link rel="icon" type="image/png" sizes="16x16" href="../_images/common/favicon-16x16.png">
+
+<script type="text/javascript" src="../_js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../_js/jquery.js"></script>
+<script type="text/javascript" src="../_js/jquery.easing.1.3.js"></script>
+
+	
+</head>
+<body class="main">
+	
+	<div id="container">
+		
+		<!--   LNB   -->
+		<div id="lnb"></div>
+		
+		<div id="contents">
+			<h2>기업정보 조회<p>기업 재무정보 및 신용 정보를 제공합니다.(NICE디앤비 제공)</p></h2>
+            
+            <div class="tab1-wrap mt30">
+                <ul>
+                    <li><a href="#">일반현황</a></li>
+                    <li><a href="#">재무재표</a></li>
+                    <li class="on"><a href="#">신용등급</a></li>
+                    <li><a href="#">신용상태정보</a></li>
+                </ul>
+            </div>
+            
+            <div class="tab2-wrap mt30">
+                <ul>
+                    <li><a href="#">Clip 신용등급</a></li>
+                    <li><a href="#">현금흐름등급</a></li>
+                    <li class="on"><a href="#">CRI 등급</a></li>
+                </ul>
+            </div>
+            
+            <h4>CRI 등급</h4>
+            
+            <div class="clip-wrap">
+                <ul class="rate">
+                    <li class="value c">C1</li>
+                    <li>기준일 : 2021-01-31</li>
+                </ul>
+                <div class="chart">
+                    <ul class="legend">
+                        <li class="grow1">보류</li>
+                        <li class="grow2">위험</li>
+                        <li class="grow2">보통</li>
+                        <li class="grow3">양호</li>
+                        <li class="grow3">우수</li>
+                    </ul>
+                    <ul class="graph">
+                        <li class="n">
+                            <p class="bar"></p>
+                            <p class="txt">NG</p>
+                        </li>
+                        <li class="d">
+                            <p class="bar"></p>
+                            <p class="txt">D</p>
+                        </li>
+                        <li class="d">
+                            <p class="bar"></p>
+                            <p class="txt">C3</p>
+                        </li>
+                        <li class="c">
+                            <p class="bar"></p>
+                            <p class="txt">C2</p>
+                        </li>
+                        <li class="c on">
+                            <p class="bar"></p>
+                            <p class="txt">C1</p>
+                        </li>
+                        <li class="b">
+                            <p class="bar"></p>
+                            <p class="txt">B3</p>
+                        </li>
+                        <li class="b">
+                            <p class="bar"></p>
+                            <p class="txt">B2</p>
+                        </li>
+                        <li class="b">
+                            <p class="bar"></p>
+                            <p class="txt">B1</p>
+                        </li>
+                        <li class="a">
+                            <p class="bar"></p>
+                            <p class="txt">A3</p>
+                        </li>
+                        <li class="a">
+                            <p class="bar"></p>
+                            <p class="txt">A2</p>
+                        </li>
+                        <li class="a">
+                            <p class="bar"></p>
+                            <p class="txt">A1</p>
+                        </li>
+                    </ul>
+                </div>
+                <p class="ju mt50">평가자료가 없습니다.</p>
+            </div>
+            
+            <h4>CRI 등급 정의</h4>
+            
+            <table class="mt10">
+                <colgroup>
+					<col width="120px">
+                    <col width="120px">
+                    <col width="*">
+                </colgroup>
+                <tr>
+					<th>민간용</th>
+                    <th>공공용</th>
+                    <th>등급정의</th>
+                </tr>
+                <tr>
+                    <td class="rate-a" rowspan="3">정상</td>
+                    <td class="rate-a">A1</td>
+                    <td>최상위의 단기거래 신용능력을 보유하여, 채무불이행으로 인한 위험 가능성이 극히 낮으며,<br> 현 단계에서 합리적으로 예측가능한 장래의 어떠한 환경변화에도 대처 가능한 초우량의 신용</td>
+                </tr>
+                <tr>
+                    <td class="rate-a">A2</td>
+                    <td>양호한 단기거래 신용능력을 보유하여, 채무불이행으로 인한 위험 가능성이 낮으며,<br> 현 단계에서 합리적으로 예측 가능한 장래의 어떠한 환경변화에 대한 대처능력이 상당한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-a">A3</td>
+                    <td>우위의 단기거래 신용능력이 인정되어, 채무불이행으로 인한 위험 가능성이 비교적 낮은 편이지만,<br>현 단계에서 예측 가능한 환경변화에 대한 대처능력이 제한적인 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-b" rowspan="3">관찰</td>
+                    <td class="rate-b">B1</td>
+                    <td>적정 수준의 단기거래 신용능력을 보유하지만, 급격한 환경변화에 따라 거래안정성에 다소 영향 받을 가능성이 있는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-b">B2</td>
+                    <td>비교적 무난한 수준의 단기거래 신용능력을 보유하지만, 장래의 거래안정성에 다소 부정적인 요인이 내재되어 있는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-b">B3</td>
+                    <td>단기간의 신용능력은 인정되지만, 향후 환경변화에 따른 지급확실성 저하 가능성이 상존하는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-c" rowspan="2">주의</td>
+                    <td class="rate-c">C1</td>
+                    <td>현재 수준에서 신용능력은 제한적이며, 장래 거래안정성 저하가능성이 예상되어 주의가 요망되는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-c">C2</td>
+                    <td>채무불이행 발생 가능성을 내포하고 있으며, 상위등급에 비해 거래안정성이 매우 낮은 수준으로 경계가 요망되는 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-d" rowspan="2">위험</td>
+                    <td class="rate-d">C3</td>
+                    <td>채무불이행 발생 가능성이 높아 향후 회복가능성이 낮고 적기 상환능력이 의심되는 수준으로 현금거래가 요망되는 위험 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-d">D</td>
+                    <td>지급불능 상태의 매우 취약한 신용능력을 나타내어 적기 상환능력이 전무한 수준</td>
+                </tr>
+                <tr>
+                    <td class="rate-n">보류</td>
+                    <td class="rate-n">NG</td>
+                    <td>자료 불충분 및 제한으로 인한 등급부재</td>
+                </tr>
+            </table>
+		</div>
+	</div>
+    
+</body>
+	
+
+</html>
