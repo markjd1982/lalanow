@@ -28,11 +28,15 @@
 		color: $white;
 		text-align: center;
 		background-color: $primary;
+		&.sec{
+			border: 1px solid $white;
+			background-color: #505562;
+		}
+		&.subbox{
+			border-radius: 10px;
+		}
 	}
-	&.sec{
-		border: 1px solid $white;
-		background-color: $primary;
-	}
+	
 	
 }
 

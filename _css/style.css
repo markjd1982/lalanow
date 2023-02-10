@@ -220,4 +220,5 @@ input[type="file"]::-ms-browse { color: #fff; border: 0; background: #343f4e; wi
 
 .btn-wrap { width: 100%; display: flex; }
 .btn-wrap .pri { box-sizing: border-box; display: block; width: 80px; line-height: 38px; border-radius: 36px; font-size: 14px; font-weight: 700; letter-spacing: -0.05em; color: #fff; text-align: center; background-color: #FF7335; }
-.btn-wrap.sec { border: 1px solid #fff; background-color: #FF7335; }
+.btn-wrap .pri.sec { border: 1px solid #fff; background-color: #505562; }
+.btn-wrap .pri.subbox { border-radius: 10px; }
