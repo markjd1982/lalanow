@@ -275,25 +275,6 @@ input[type="file"]::-ms-browse {
 	}
 }*/
 
-.date-wrap{
-    position: relative;
-    input[type="text"]{
-        background: url("../_images/common/btn-calendar@2x.png") no-repeat top 12px right 15px #fff;
-        background-size: 16px;
-    }
-    /*&:after{
-        content: "";
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        background: url("../_images/common/btn-calendar@2x.png") no-repeat center;
-        background-size: 16px;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-    }*/
-}
-
 .input-search{
     background: url("../_images/common/icon-s-search.png") no-repeat top 12px right 15px #fff;
     background-size: 16px;
