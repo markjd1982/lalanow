@@ -8,6 +8,49 @@
 @import "modal";
 @import "lnb";
 
+h2{
+	font-size: 30px;
+    font-weight: 400;
+	line-height: 1;
+	color: $black;
+    margin-top: 40px;
+    display: flex;
+    align-items: flex-end;
+    p{
+        font-size: 14px;
+        color: $textColor;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid $lineColor;
+    }
+}
+h3{ 
+	font-size: 20px;
+	line-height: 1;
+	color: $textColor;
+    text-align: left;
+} 
+h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-end;
+    p{
+        font-weight: 400;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid $lineColor;
+        font-size: 14px;
+        color: $textColor;
+    }
+    span{
+        font-weight: 400;
+        color: $textColor;
+        font-feature-settings: 14px;
+        margin-left: auto;
+    }
+}
 
 .col2flex{
 	display: flex;

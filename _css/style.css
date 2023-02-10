@@ -23,7 +23,9 @@ select::-ms-expand { display: none; }
 
 input:disabled { background: #f5f5f5; color: #979797; }
 
-input[type="text"], input[type="password"], input[type="tel"], input[type="email"] { display: inline-block; width: 100%; line-height: 38px; height: 40px; padding: 0 10px; font-size: 14px; letter-spacing: -0.59px; border: 1px solid #3C4352; vertical-align: middle; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; -moz-appearance: none; -webkit-appearance: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+input::placeholder { color: #8A92A7; }
+
+input[type="text"], input[type="password"], input[type="tel"], input[type="email"] { display: inline-block; width: 100%; line-height: 38px; height: 40px; padding: 0 10px; font-size: 14px; letter-spacing: -0.59px; border: 1px solid #565D6C; vertical-align: middle; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; -moz-appearance: none; -webkit-appearance: none; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 input[type="text"].price, input[type="password"].price, input[type="tel"].price, input[type="email"].price { text-align: right; }
 
 input:focus, textarea:focus { border: 1px solid #FF7335; }
@@ -211,6 +213,15 @@ input[type="file"]::-ms-browse { color: #fff; border: 0; background: #343f4e; wi
 #lnb .menu > ul > li ul li a { font-size: 14px; background: none; line-height: 30px; padding: 0; color: #dedede; font-weight: 400; text-decoration: none; }
 #lnb .menu > ul > li ul li a.on { color: #fff; font-weight: 700; }
 #lnb .bg { position: absolute; top: 0; right: 0; border-radius: 0 50px 30px 40px; content: ""; display: block; width: 50vw; background-color: #000000; height: calc(100vh - 200px); }
+
+h2 { font-size: 30px; font-weight: 400; line-height: 1; color: #000; margin-top: 40px; display: flex; align-items: flex-end; }
+h2 p { font-size: 14px; color: #CCCCCC; margin-left: 10px; padding-left: 10px; border-left: 1px solid #3C4352; }
+
+h3 { font-size: 20px; line-height: 1; color: #CCCCCC; text-align: left; }
+
+h4 { font-size: 16px; font-weight: 700; margin-top: 30px; display: flex; align-items: flex-end; }
+h4 p { font-weight: 400; margin-left: 10px; padding-left: 10px; border-left: 1px solid #3C4352; font-size: 14px; color: #CCCCCC; }
+h4 span { font-weight: 400; color: #CCCCCC; font-feature-settings: 14px; margin-left: auto; }
 
 .col2flex { display: flex; }
 
