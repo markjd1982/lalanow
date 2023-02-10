@@ -4,7 +4,7 @@ Error: File to import not found or unreadable: compass/css3.
          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon
          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat
          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base
-        on line 3 of F:\project\2023\01_lalanow\bo\html\scss\main.scss
+        on line 3 of F:\project\2023\01_lalanow\bo\html\scss\style.scss
 
 1: /*   Main   *\/
 2: 
@@ -12,11 +12,11 @@ Error: File to import not found or unreadable: compass/css3.
 4: @import "color";
 5: @import "mixin";
 6: @import "form";
-7: @import "layout";
-8: @import "modal";
+7: @import "table";
+8: @import "layout";
 
 Backtrace:
-F:\project\2023\01_lalanow\bo\html\scss\main.scss:3
+F:\project\2023\01_lalanow\bo\html\scss\style.scss:3
 C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:67:in `rescue in import'
 C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:44:in `import'
 C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/lib/ruby/gems/2.7.0/gems/sass-3.7.4/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -53,4 +53,4 @@ C:/Program Files/Adobe/Adobe Dreamweaver 2021/ruby/bin/sass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass/css3.\A        Load paths:\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 3 of F:\project\2023\01_lalanow\bo\html\scss\main.scss\A \A 1: /*   Main   */\A 2: \A 3: @import \"compass/css3\";\A 4: @import \"color\";\A 5: @import \"mixin\";\A 6: @import \"form\";\A 7: @import \"layout\";\A 8: @import \"modal\";"; }
+  content: "Error: File to import not found or unreadable: compass/css3.\A        Load paths:\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/bourbon\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/neat\A          C:/Program Files/Adobe/Adobe Dreamweaver 2021/Configuration/SassFrameworks/base\A         on line 3 of F:\project\2023\01_lalanow\bo\html\scss\style.scss\A \A 1: /*   Main   */\A 2: \A 3: @import \"compass/css3\";\A 4: @import \"color\";\A 5: @import \"mixin\";\A 6: @import \"form\";\A 7: @import \"table\";\A 8: @import \"layout\";"; }
